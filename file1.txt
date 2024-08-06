@@ -3,14 +3,8 @@
 8	Hariharan P	CSE
 12	Muthu Raj	IT
 14 	Hariharan	IT
-
 9	Arunraj		IT
->>>>>>> edc3972 (Arunraj name added)
-=======
 10	Siva		CSE
->>>>>>> 8a49438 (Siva name added)
-=======
 14	Hariharan	IT
 15	Ariharan	IT
 9	Arunraj		IT
->>>>>>> 73837a2 (Ariharan name added)
