@@ -2,8 +2,12 @@
 1	Sanjeev		CSE
 8	Hariharan P	CSE
 <<<<<<< HEAD
+<<<<<<< HEAD
 12	Muthu Raj	IT
 =======
 14 	Hariharan	IT
 
 >>>>>>> 9343aec (Hariharan Name Added)
+=======
+9	Arunraj		IT
+>>>>>>> edc3972 (Arunraj name added)
