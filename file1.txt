@@ -10,5 +10,4 @@
 3	Pavithra	CSE
 6	Jenifer		IT
 5	Madhumitha	CSE
-12	Muthu Raj	IT
 13	Jenish		IT
