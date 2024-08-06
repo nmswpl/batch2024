@@ -8,7 +8,6 @@
 2	Priyadharshini	CSE
 3	Pavithra	CSE
 6	Jenifer		IT
-<<<<<<< HEAD
 5	Madhumitha	CSE
 13	Jenish		IT
 3	Pavithra	CSE
@@ -22,6 +21,4 @@
 11	Premalatha	CSE
 7	Krishnaraj	IT
 5	Madhumitha	CSE
-=======
-	Madhumitha	CSE
->>>>>>> ac5639e (my Training project commited)
+
