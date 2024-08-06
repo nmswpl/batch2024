@@ -1,4 +1,3 @@
-7	Krishnaraj	IT
 1	Sanjeev		CSE
 8	Hariharan P	CSE
 12	Muthu Raj	IT
@@ -21,3 +20,4 @@
 2	Priyadharshini  CSE
 4	Aarthi		CSE
 11	Premalatha	CSE
+7	Krishnaraj	IT
