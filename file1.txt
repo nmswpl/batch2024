@@ -1,17 +1,16 @@
 7	Krishnaraj	IT
 1	Sanjeev		CSE
 8	Hariharan P	CSE
-<<<<<<< HEAD
-<<<<<<< HEAD
 12	Muthu Raj	IT
-<<<<<<< HEAD
-=======
 14 	Hariharan	IT
 
->>>>>>> 9343aec (Hariharan Name Added)
-=======
 9	Arunraj		IT
 >>>>>>> edc3972 (Arunraj name added)
 =======
 10	Siva		CSE
 >>>>>>> 8a49438 (Siva name added)
+=======
+14	Hariharan	IT
+15	Ariharan	IT
+9	Arunraj		IT
+>>>>>>> 73837a2 (Ariharan name added)
