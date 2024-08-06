@@ -5,10 +5,10 @@
 14 	Hariharan	IT
 9	Arunraj		IT
 10	Siva		CSE
-14	Hariharan	IT
 15	Ariharan	IT
-9	Arunraj		IT
 2	Priyadharshini	CSE
 3	Pavithra	CSE
 6	Jenifer		IT
-	Madhumitha	CSE
+5	Madhumitha	CSE
+12	Muthu Raj	IT
+13	Jenish		IT
