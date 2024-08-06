@@ -8,9 +8,6 @@
 14	Hariharan	IT
 15	Ariharan	IT
 9	Arunraj		IT
-<<<<<<< HEAD
 2	Priyadharshini	CSE
-=======
 3	Pavithra	CSE
-
->>>>>>> 813b6b4 (Pavithra name added)
+6	Jenifer		IT
