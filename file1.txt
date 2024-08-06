@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 12	Muthu Raj	IT
+<<<<<<< HEAD
 =======
 14 	Hariharan	IT
 
@@ -11,3 +12,6 @@
 =======
 9	Arunraj		IT
 >>>>>>> edc3972 (Arunraj name added)
+=======
+10	Siva		CSE
+>>>>>>> 8a49438 (Siva name added)
