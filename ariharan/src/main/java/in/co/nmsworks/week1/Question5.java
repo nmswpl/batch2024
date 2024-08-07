@@ -18,20 +18,8 @@ public class Question5 {
         if(a>b && a>c){
             System.out.println(a + " is the highest number");
         }
-        else if(b>a && b>c){
+        else if(b>c){
             System.out.println(b + " is the highest number");
-        }
-        else if(c>b && c>a){
-            System.out.println(c + " is the highest number");
-        }
-        else if(a==b && a>c){
-            System.out.println(a + " is the highest number");
-        }
-        else if(c==b && c>a){
-            System.out.println(c + " is the highest number");
-        }
-        else if(c==a && c>b){
-            System.out.println(c + " is the highest number");
         }
         else {
             System.out.println(c + " is the highest number");
