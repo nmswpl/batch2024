@@ -18,7 +18,6 @@ public class Question7 {
          for(int j = 1;j<=y;j++){
              System.out.print(i + " ");
          }
-
          y--;
 
          System.out.println("");
