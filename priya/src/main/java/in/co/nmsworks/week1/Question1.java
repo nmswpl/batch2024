@@ -1,7 +1,9 @@
 package in.co.nmsworks.week1;
 import java.util.Scanner;
-/**
- * Program to find the quotient and remainder
+/* Write a program to compute Quotient and Remainder in Java
+Output:
+Quotient=6
+Remainder=1
  */
 public class Question1 {
     public static void main(String[] args) {

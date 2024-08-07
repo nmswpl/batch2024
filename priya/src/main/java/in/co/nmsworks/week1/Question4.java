@@ -2,7 +2,7 @@ package in.co.nmsworks.week1;
 import java.util.Scanner;
 
 /**
- * Factorial program
+ * Factorial program in java
  */
 public class Question4 {
 

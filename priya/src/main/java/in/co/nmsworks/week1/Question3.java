@@ -1,6 +1,8 @@
 package in.co.nmsworks.week1;
-/** multiples of 7
- *
+/**Multiples of 7 Program in Java
+7 x 1 =7
+7 x 2 = 14
+7 x 3 = 21
  */
 public class Question3 {
     public static void main(String[] args) {

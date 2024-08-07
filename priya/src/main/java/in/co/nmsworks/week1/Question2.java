@@ -1,7 +1,13 @@
 package in.co.nmsworks.week1;
 import java.util.Scanner;
-/**Program to multiply
- * floating point numbers**/
+/**Write
+ a
+ program
+ to
+ Multiply
+ Two
+ Floating-Point
+ Numbers The Result is: 3.0**/
 public class Question2 {
 
     public static void main(String[] args) {
@@ -14,6 +20,6 @@ public class Question2 {
         System.out.println("Enter the second number:");
         float b = s.nextFloat();
 
-        System.out.println("The result is "+a*b);
+        System.out.println("The Result is: "+a*b);
     }
 }

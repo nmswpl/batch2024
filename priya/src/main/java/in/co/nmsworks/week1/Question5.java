@@ -1,7 +1,8 @@
 package in.co.nmsworks.week1;
 import java.util.Scanner;
 
-/** greatest number**/
+/** Write a program to Find Largest Among Three numbers using
+ if..else statement**/
 
 public class Question5 {
 

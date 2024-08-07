@@ -1,6 +1,14 @@
 package in.co.nmsworks.week1;
 
-/*** Alphabet pattern 1*/
+/**Alphabet Pattern 1 :
+ A
+ BB
+ CCC
+ DDDD
+ EEEEE
+ FFFFFF
+ GGGGGGG
+ **/
 
 public class Question9 {
 
@@ -8,7 +16,7 @@ public class Question9 {
 
         for (int i = 65; i <= 71; i++) {
             for (int j = 65; j <= i; j++) {
-                System.out.print((char) i + " ");
+                System.out.print((char) i);
             }
             System.out.println();
         }
