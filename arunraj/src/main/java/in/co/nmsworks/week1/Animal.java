@@ -40,6 +40,6 @@ public class Animal {
      public void cow(String cowName,float litre){
         cname=cowName;
         float this.litre =litre;
-        System.out.println(cname+" cow gives "+ litre +" liters milk a day");
+        System.out.println(cname+" cow gives "+ this.litre +" liters milk a day");
     }*/
 }
