@@ -14,6 +14,6 @@ public class Question2 {
         m=in.nextFloat();
         float mul;
         mul=n*m;
-        System.out.println("The Result is : "+mul);
+        System.out.printf("The Result is : "+"%.2f",mul);
     }
 }
