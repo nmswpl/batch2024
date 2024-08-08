@@ -12,10 +12,11 @@ G G G G G G G
 public class Question9 {
 
     public static void main(String[] args) {
-        for(int i = 0; i < 7;i++){
-
+        int A = 65;
+        int limit = 7;
+        for(int i = 0; i < limit;i++){
             for(int j=0;j<=i;j++){
-                System.out.print((char)(i+65));
+                System.out.print((char)(i+A));
             }
             System.out.println();
 
