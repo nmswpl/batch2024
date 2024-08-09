@@ -1,5 +1,5 @@
 package in.co.nmsworks.week1;
-//Write a program to check if two words are palindrome
+//Write a program to check if given word is palindrome or not
 
 public class Training2 {
     public  void ispalindrome(String str)

@@ -13,8 +13,7 @@ public class Training8 {
         String str[]=words.split(" ");
         for (int i = 0; i < str.length ; i++) {
             String s=str[i];
-            String ch= String.valueOf(s.charAt(0));
-            s=s.replace(ch,ch.toUpperCase());
+            s=s.replace(String.valueOf(s.charAt(0)),String.valueOf(s.charAt(0)).toUpperCase());
             str[i]=s;
         }
         String aft=String.join(" ",str);

@@ -14,7 +14,6 @@ public class Training3 {
             if((str.length()%2)==0){
                 System.out.println(str);
             }
-
         }
     }
 }

@@ -20,7 +20,6 @@ public class Training7 {
             else{
                 remdup+=s;
             }
-
         }
         System.out.println("After removing duplicates in your words :"+ remdup);
 

@@ -32,11 +32,11 @@ public class Runner {
 //        Training7 t7=new Training7();
 //        t7.removeDuplicates();
 
-//        Training8 t8=new Training8();
-//        t8.convLowTOUpper();
+        Training8 t8=new Training8();
+      t8.convLowTOUpper();
 
-         Training9 t9=new Training9();
-         t9.longWord();
+//         Training9 t9=new Training9();
+//         t9.longWord();
 
     }
 }

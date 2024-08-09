@@ -23,8 +23,6 @@ public class Training4 {
                 else {
                     count++;
                 }
-
-
         }
         System.out.println(words.substring(count));
     }

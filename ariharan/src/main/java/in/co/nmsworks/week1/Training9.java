@@ -18,12 +18,9 @@ public class Training9 {
             if(s.length()>count){
                 count=s.length();
                 index=i;
-
             }
-
         }
         System.out.println("the longest word in string is:" + str[index]);
-
     }
 
 }
