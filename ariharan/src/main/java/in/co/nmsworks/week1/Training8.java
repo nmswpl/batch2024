@@ -12,11 +12,9 @@ public class Training8 {
         String words = sc.nextLine();
         String str[]=words.split(" ");
         for (int i = 0; i < str.length ; i++) {
-            String s=str[i];
-            s=s.replace(String.valueOf(s.charAt(0)),String.valueOf(s.charAt(0)).toUpperCase());
-            str[i]=s;
+            String s = str[i];
+            String st = String.valueOf(s.charAt(0)).toUpperCase();
+            System.out.print(st+s.substring(1)+" ");
         }
-        String aft=String.join(" ",str);
-        System.out.print(aft);
     }
 }
