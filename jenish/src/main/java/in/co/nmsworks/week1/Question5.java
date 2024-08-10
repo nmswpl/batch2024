@@ -36,5 +36,5 @@ public class Question5 {
         else {
             System.out.println("Number "+num3+" is the largest number");
         }
-        }
     }
+}

@@ -6,7 +6,6 @@ import java.util.Scanner;
  * Multiply two floating point numbers
  * **/
 
-
 public class Question2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
