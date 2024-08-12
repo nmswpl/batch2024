@@ -16,7 +16,7 @@ public class Te16 {
         {
             fact=fact*i;
         }
-        System.out.println("fact");
+        System.out.println("fact"+fact);
 
     }
 }
