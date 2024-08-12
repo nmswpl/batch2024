@@ -21,22 +21,21 @@ public class Test{
         System.out.println("Area of tri1      : "+tri1.areaTriangle());
         System.out.println("Perimeter of tri1 : "+tri1.perimeterTriangle())*/
 
-        //int a=20;
         Animal dogOb=new Animal(20);
         dogOb.animalName="Dog";
         dogOb.color="Black and Brown";
-        dogOb.breed="Rotwieler";
+        dogOb.breed="Rottweiler";
         dogOb.age=4;
         dogOb.appearance();
         dogOb.name("Rocky");
 
-        Animal u=new Animal(15);
-        u.animalName="Cat";
-        u.color="Orange";
-        u.age=4;
-        u.breed="Persian cat";
-        u.appearance();
-        u.name("Garfield");
+        Animal catOb=new Animal(15);
+        catOb.animalName="Cat";
+        catOb.color="Orange";
+        catOb.age=4;
+        catOb.breed="Persian cat";
+        catOb.appearance();
+        catOb.name("Garfield");
 
         Animal v=new Animal();
         v.cow("Holstein-Frisien",2);
@@ -45,5 +44,3 @@ public class Test{
         x.cow("Belgian Blue",2.5);*/
     }
 }
-
-
