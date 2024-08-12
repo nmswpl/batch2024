@@ -1,10 +1,6 @@
 package in.co.nmsworks.week1;
 
-/*
- * Write a Java method to convert every word in a sentence to title case, where the first letter of each word is capitalized.
- */
-
-public class Training8 {
+public class  Training8 {
     public void convertToTitleCase(String s){
         String[] arr = s.split(" ");
         String res = "";

@@ -16,7 +16,7 @@ public class Question1 {
         System.out.println("Enter Divisor :");
         int Divisor = sc.nextInt();
 
-        int quotient = (int) Dividend / Divisor;
+        int quotient = Dividend / Divisor;
         int remainder = Dividend % Divisor;
 
         System.out.println("Quotient : "+quotient);

@@ -1,9 +1,5 @@
 package in.co.nmsworks.week1;
 
-/*
- * Given a string str, write a Java program to print all words with even length in the given string.
- */
-
 public class Training3 {
     public void toFindEvenLenWord(String s) {
         String[] arr = s.split(" ");
