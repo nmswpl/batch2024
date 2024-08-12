@@ -6,15 +6,15 @@ package in.co.nmsworks.week2;
  */
 
 public class TE14 {
-    public void reverseArray(int[] arr){
-        int temp = 0 ;
-        for (int i = 0; i <arr.length /2 ; i++) {
+    public void reverseArray(int[] arr) {
+        int temp;
+        for (int i = 0; i < arr.length / 2; i++) {
             temp = arr[i];
-            arr[arr.length-1] = arr[i];
-            arr[i] = temp;
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
         }
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ,");
-        };
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
     }
 }
