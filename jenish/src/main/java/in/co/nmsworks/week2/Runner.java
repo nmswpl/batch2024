@@ -15,7 +15,7 @@ public class Runner {
 
         Training4 t4 = new Training4();
         int[] arr3 = {7,15,41};
-        int searchElement = 41;
+        int searchElement = 10;
         int res1 = t4.findElement(arr3, searchElement);
         System.out.println("Element found at index: "+res1);
 
@@ -67,16 +67,24 @@ public class Runner {
 
         Training18 t18 = new Training18();
         int[] arr9 = {1, 2, 3, 2, 2, 3};
-        int element = 2;
+        int element = 1;
         t18.noOfTimes(arr9,element);
 
         Training19 t19 = new Training19();
-        if(t19.isPalindrome("dad")){
+        if(t19.isPalindrome("hello")){
             System.out.println("Palindrome");
         }
         else{
             System.out.println("Not a Palindrome");
         }
 
+        Training20 t20 = new Training20();
+        int num = 7;
+        if (t20.isPrime(num)){
+            System.out.println(num+" is a Prime number.");
+        }
+        else{
+            System.out.println(num+" is not a Prime number.");
+        }
     }
 }
