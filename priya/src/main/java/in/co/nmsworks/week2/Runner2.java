@@ -40,6 +40,7 @@ public class Runner2 {
 
         Te10 te10 = new Te10();
         te10.getNumbers(200,500);
+        System.out.println();
 
         Te11 te11 = new Te11();
       te11.getGreatestNumber(2,5,5);
@@ -56,7 +57,7 @@ public class Runner2 {
         int[] a15 = {2,3,5,6};
         te15.printOddCount(a15);
 
-        Te16 te16 = new Te16();
+        Te17 te16 = new Te17();
         int[] a16 = {2,3,5,6};
         te16.maxArray(a16);
 
