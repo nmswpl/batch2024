@@ -57,9 +57,9 @@ public class Runner2 {
         int[] a15 = {2,3,5,6};
         te15.printOddCount(a15);
 
-        Te17 te16 = new Te17();
-        int[] a16 = {2,3,5,6};
-        te16.maxArray(a16);
+        Te17 te17 = new Te17();
+        int[] a17 = {2,3,5,6};
+        te17.maxArray(a17);
 
 
 
