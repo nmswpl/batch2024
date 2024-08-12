@@ -30,7 +30,7 @@ public class Runner {
 //        t9.divisibleByThree();
 
         TE10 t10 =  new TE10();
-//        t10.divisibleBySeven();
+        t10.divisibleBySeven();
 
         TE11 t11 = new TE11();
 //        t11.biggestOfThree();
@@ -60,6 +60,6 @@ public class Runner {
 //        t19.palindrome();
 
         TE20 t20 =  new TE20();
-        t20.primeOrNot();
+//        t20.primeOrNot();
     }
 }

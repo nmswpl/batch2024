@@ -8,7 +8,7 @@ public class TE10 {
 
         for (int i = start; i < end; i++) {
 
-            if(String.valueOf(i).charAt(2) == '7'){
+            if(i % 10 == 7){
                 System.out.println(i);
             }
 
