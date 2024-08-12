@@ -7,10 +7,10 @@ public class Te20 {
     public void isPrime(int n){
         for(int i=2;i<=n/2;i++){
             if(n%i==0){
-                System.out.println("Prime");
+                System.out.println("Not Prime");
             }
             else {
-                System.out.println("Not Prime");
+                System.out.println("Prime");
             }
         }
     }
