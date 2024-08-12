@@ -16,7 +16,8 @@ public class Runner {
         Training4 t4 = new Training4();
         int[] arr3 = {7,15,41};
         int searchElement = 41;
-        t4.findElement(arr3, searchElement);
+        int res1 = t4.findElement(arr3, searchElement);
+        System.out.println("Element found at index: "+res1);
 
         Training5 t5 = new Training5();
         t5.checkVowelOrConsonant('b');
@@ -53,13 +54,29 @@ public class Runner {
         t14.reverse(arr6);
 
         Training15 t15 = new Training15();
-        //int res = t15.fact(5);
-        //System.out.println(res);
+        int[] arr8 = {2, 3, 4, 5, 6};
+        t15.noOfEvenElements(arr8);
 
         Training16 t16 = new Training16();
-        int[] arr7 = {12, 3, 20, 14};
-        t16.findLargest(arr7);
+        int res = t16.fact(5);
+        System.out.println(res);
 
+        Training17 t17 = new Training17();
+        int[] arr7 = {12, 3, 20, 14};
+        t17.findLargest(arr7);
+
+        Training18 t18 = new Training18();
+        int[] arr9 = {1, 2, 3, 2, 2, 3};
+        int element = 2;
+        t18.noOfTimes(arr9,element);
+
+        Training19 t19 = new Training19();
+        if(t19.isPalindrome("dad")){
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Not a Palindrome");
+        }
 
     }
 }

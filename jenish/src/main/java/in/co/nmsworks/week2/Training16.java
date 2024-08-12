@@ -1,13 +1,10 @@
 package in.co.nmsworks.week2;
 
 public class Training16 {
-    public void findLargest(int[] arr){
-        int largest = arr[0];
-        for (int i = 1; i < arr.length ; i++) {
-            if(largest < arr[i]){
-                largest = arr[i];
-            }
+    public int fact(int num) {
+        if(num == 0 || num == 1){
+            return 1;
         }
-        System.out.println("Largest Element is "+largest);
+        return num * fact(num - 1);
     }
 }
