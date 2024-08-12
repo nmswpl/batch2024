@@ -40,6 +40,9 @@ public class Runner {
         Te14 te14=new Te14();
         te14.arr=new char[]{'a','b','c'};
         te14.reverseArr();
+        Te8 te8=new Te8();
+        te8.a=577;
+        te8.hundredPosition();
 
 
 
