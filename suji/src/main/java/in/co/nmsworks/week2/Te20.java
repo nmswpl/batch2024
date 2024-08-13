@@ -6,26 +6,25 @@ package in.co.nmsworks.week2;
 
 import java.util.Scanner;
 
-public class Te20 {
-    public static void main(String[] args) {
+class Te20    {
+    int n;
+    public Te20(int n3){
+        this.n=n3;
 
-        Scanner sc=new Scanner(System.in);
-        int n;
-        System.out.println("Enter n");
-        n = sc.nextInt();
         int c=0;
         for (int i = 1; i <=n; i++) {
             if(n%i==0)
             {
                 c=c+1;
             }}
-            if (c==2)
+        if (c==2)
 
-            {
-                System.out.println("PRIME");
-            }
-            else System.out.println("NOT A PRIME NUMBER");
-
+        {
+            System.out.println("PRIME");
         }
+        else System.out.println("NOT A PRIME NUMBER");
+
+    }
 
 }
+

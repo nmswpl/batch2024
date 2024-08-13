@@ -6,8 +6,8 @@ For E.g Input : arr[] = {32, 43, 4, 15} Output : Odd elements = 2 Reason : 43 & 
 are odd.  */
 
 
-public class Te12 {
-    public static void main(String[] args) {
+class Te12 {
+    public Te12() {
         int[]a={32,43,4,15};
         for (int i = 0; i < 4; i++)
         {

@@ -4,9 +4,9 @@ package in.co.nmsworks.week2;
 //For E.g Input : arr[] = {a, b, c} Output : arr[] = {c, b, a}
 
 
-public class Te14
+class Te14
 {
-    public static void main(String[] args) {
+    public Te14() {
 
         String[] s = {"I", "am", "a", "girl"};
         String[] str = {""};
@@ -25,6 +25,4 @@ public class Te14
         }
 
     }
-    }
-
-
+}

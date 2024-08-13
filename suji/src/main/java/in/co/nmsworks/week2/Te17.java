@@ -4,19 +4,19 @@ package in.co.nmsworks.week2;
 //array.
 //For E.g Input : arr[] = {12, 3, 20, 14} Output : Largest element = 20
 
-public class Te17 {
-    public static void main(String[] args) {
-        int a[]={12, 3, 20, 14};
+class Te17
+{
+    public Te17()
+    {
+        int []arr= {12, 30, 20, 14} ;
         int bigNum=0;
-        for (int i = 0; i < 3; i++) {
-            if(a[i]>bigNum)
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>bigNum)
             {
-                bigNum=a[i];
+                bigNum=arr[i];
             }
         }
-        System.out.println("The biggest of the 3 numbers is "+bigNum);
+        System.out.println(" The largesr num is "+bigNum);
     }
-
-
-    }
-
+}

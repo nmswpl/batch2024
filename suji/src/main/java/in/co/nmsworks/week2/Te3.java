@@ -4,9 +4,10 @@ package in.co.nmsworks.week2;
  //       E.g : Input : arr1 = {2,4,1} arr2={3,5,7} Output : 6 20 7
 
 
-public class Te3
+class Te3
 {
-    public static void main(String[] args) {
+    public Te3()
+    {
         int []a={2,4,1};
         int []b={3,5,7};
         int []c={0,0,0};

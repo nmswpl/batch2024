@@ -6,25 +6,26 @@ package in.co.nmsworks.week2;
 //Search Element : 5 Output : -1
 
 import java.util.*;
-public class Te4 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+class Te4 {
+    int n;
+    public Te4(int n)
+    {
+        this.n=n;
+        int p=0;
         int a[] = {7, 15, 41};
-        int n;
-        System.out.println("Enter n");
-        n = sc.nextInt();
-
-        for (int i = 0; i < 3; i++) {
-            if (a[i] == n) {
+        for (int i = 0; i < 3; i++)
+        {
+            if (a[i] == n)
+            {
+                p=1;
                 System.out.println("The position of given element  " + n + "  in an array  " + i);
                 break;
-            } else if (a[i]!=n)
-            {
-                System.out.println(" -1");
-                break;
-            }
-
+            }}
+        if(p!=1)
+        {
+            System.out.println(" -1");
         }
     }
 }
+
 

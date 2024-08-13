@@ -4,8 +4,8 @@ package in.co.nmsworks.week2;
 //E.g : Input : arr1 = {2, 4, 3, 5} Output : 4 16 9 25
 
 
-public class Te7 {
-    public static void main(String[] args) {
+class Te7 {
+    public Te7() {
         int[] a = {2, 3, 4, 5};
         int[] m = {0, 0, 0, 0};
 
@@ -14,11 +14,9 @@ public class Te7 {
             m[i] = a[i] * a[i];
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
+        {
             System.out.print(m[i] + " ");
-
         }
-
-
     }
 }

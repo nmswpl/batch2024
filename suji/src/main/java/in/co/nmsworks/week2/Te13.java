@@ -4,8 +4,8 @@ package in.co.nmsworks.week2;
 //array.
 
 
-public class Te13 {
-    public static void main(String[] args) {
+class Te13 {
+    public Te13() {
         int[]a={3,4,3,4};
         int sum=0;
         for (int i = 0; i < 4; i++) {

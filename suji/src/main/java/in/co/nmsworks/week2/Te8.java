@@ -5,13 +5,10 @@ package in.co.nmsworks.week2;
 //E.g 2: Input : 777 Output : Seven
 
 import  java.util.*;
-public class Te8 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n;
-        System.out.println("Enter n");
-        n = sc.nextInt();
-
+class Te8 {
+    int n;
+    public Te8(int n1) {
+        n=n1;
         int q = 0;
         q = n / 100;
         //System.out.println(q);
@@ -25,5 +22,3 @@ public class Te8 {
         }
     }
 }
-
-

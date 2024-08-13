@@ -5,10 +5,9 @@ package in.co.nmsworks.week2;
 //Expected Output : 17 x 1 = 17 ...... 17 x 10 = 170
 
 
-public class Te6 {
-    public static void main(String[] args) // main function
+class Te6 {
+    public Te6()
     {
-
         for (int i=1;i<=10;i++)
         {
             int a=17*i;
@@ -16,4 +15,3 @@ public class Te6 {
         }
     }
 }
-

@@ -5,18 +5,16 @@ package in.co.nmsworks.week2;
 
 import java.util.*;
 
-public class Te16 {
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n;
-        System.out.print("Enter n");
-        n=sc.nextInt();
+class Te16 {
+    int n;
+    public Te16(int n2) {
+        n=n2;
         int fact=1;
         for (int i = 1; i <=n; i++)
         {
             fact=fact*i;
         }
-        System.out.println("fact"+fact);
+        System.out.println("fact "+fact);
 
     }
 }
