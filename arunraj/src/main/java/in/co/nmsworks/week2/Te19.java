@@ -10,8 +10,7 @@ public class Te19 {
         String str1="";
         String[] ch=str.split("");
         for (int i=str.length()-1;i>=0;i--){
-            str=ch[i];
-            System.out.print(str);
+            str1=ch[i];
         }
         if(str.equals(str1)){
             System.out.println(str+" is Palindrome");

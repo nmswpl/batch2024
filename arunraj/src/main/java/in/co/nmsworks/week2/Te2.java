@@ -10,7 +10,10 @@ Every thing else : F*/
 
 public class Te2 {
     public void grade(int n){
-        if(n>80 && n<=90){
+        if(n>90){
+            System.out.println("Grade : S");
+        }
+        else if(n>80 && n<=90){
             System.out.println("Grade : A");
         }
         else if (n>70 && n<=80){

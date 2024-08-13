@@ -6,17 +6,9 @@ public class Te5 {
     public void vowelConsonant(char ch){
         switch (ch){
             case 'a':
-                System.out.println("Vowel");
-                break;
-            case 'e':
-                System.out.println("Vowel");
-                break;
-            case 'i' :
-                System.out.println("Vowel");
-                break;
             case 'o' :
-                System.out.println("Vowel");
-                break;
+            case 'e':
+            case 'i' :
             case 'u':
                 System.out.println("Vowel");
                 break;

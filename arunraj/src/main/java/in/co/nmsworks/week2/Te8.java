@@ -9,6 +9,36 @@ public class Te8 {
         String str="542";
         char ch;
         ch=str.charAt(0);
-        System.out.println("Input : "+str+" Output : "+ch);
+        String hundreds="";
+        switch (ch){
+            case 1:
+                hundreds="One";
+                break;
+            case 2:
+                hundreds="Two";
+                break;
+            case 3:
+                hundreds="Three";
+                break;
+            case 4:
+                hundreds="Four";
+                break;
+            case 5:
+                hundreds="Five";
+                break;
+            case 6:
+                hundreds="Six";
+                break;
+            case 7:
+                hundreds="Seven";
+                break;
+            case 8:
+                hundreds="Eight";
+                break;
+            case 9:
+                hundreds="Nine";
+                break;
+        }
+        System.out.println("Input : "+str+" Output : "+hundreds);
     }
 }
