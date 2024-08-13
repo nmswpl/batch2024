@@ -62,8 +62,23 @@ public class Runner {
 //        int arr1[]={6,5,4,6,7,8,45,33,12,6};
 //        t18.numOfOccurence(arr1);
 
-        Te19 t19=new Te19();
-        String str="name";
-        t19.ispalindrome(str);
+//        Te19 t19=new Te19();
+//        String str="name";
+//        t19.ispalindrome(str);
+        Te20 t20=new Te20();
+        int val=33;
+        if(t20.isPrime(val)==1){
+            System.out.println("it is a prime");
+        }
+        else if (t20.isPrime(val)==-1) {
+
+                System.out.println("it is a 1 0r 0");
+
+
+        }
+
+        else {
+            System.out.println("it is a not a prime");
+        }
     }
 }
