@@ -73,7 +73,7 @@ public class Runner {
         System.out.println("\n\n");
 
         TE16 product = new TE16();
-        System.out.println("Product of elements of given array : "+product.productOfElementsInArray(array2));
+        System.out.println("Factorial  : "+product.Factorial(4));
         System.out.println("\n\n");
 
         TE17 largest = new TE17();

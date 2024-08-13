@@ -1,10 +1,10 @@
 package in.co.nmsworks.week2;
 
 public class TE16 {
-    public int productOfElementsInArray(int[] arr2){
+    public int Factorial(int num){
         int product = 1;
-        for (int i = 0; i < arr2.length; i++) {
-            product = product * arr2[i];
+        for (int i = num; i > 0; i--) {
+            product = product * i;
         }
         return product;
     }
