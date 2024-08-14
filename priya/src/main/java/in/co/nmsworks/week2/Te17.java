@@ -1,5 +1,7 @@
 package in.co.nmsworks.week2;
-
+/*17. Given an array of integer, Write a Program to find the largest element in the given
+array.
+For E.g Input : arr[] = {12, 3, 20, 14} Output : Largest element = 20*/
 public class Te17 {
     public void maxArray(int[] arr){
       int max = arr[0];
@@ -9,7 +11,7 @@ public class Te17 {
             }
 
         }
-        System.out.println(max);
+        System.out.println("Largest Element = "+max);
 
     }
 }

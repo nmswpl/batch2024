@@ -1,5 +1,11 @@
 package in.co.nmsworks.week2;
-
+/*2. Write a program to print the Grade for given Mark.
+Mark Slab : 91-100 = S;
+81-90 = A;
+71-80 = B;
+61-70 = C ;
+51-60 = D;
+Every thing else : F*/
 public class Te2 {
     public void getGrade(int mark) {
         if (mark >= 51 && mark <= 60) {
