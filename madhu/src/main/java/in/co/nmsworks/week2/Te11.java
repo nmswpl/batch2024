@@ -1,5 +1,6 @@
 package in.co.nmsworks.week2;
-
+/* Write a program to print the biggest of the 3 numbers
+E.g : Input : 12, 24, 5 Output : 24 ; Input2 : 18, 18, 35 Output : 35*/
 import java.util.Scanner;
 
 public class Te11
