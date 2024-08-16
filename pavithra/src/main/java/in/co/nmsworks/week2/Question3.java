@@ -10,17 +10,11 @@ public class Question3 {
         int[] arr1 = {2, 4, 1};
         int[] arr2 = {3, 5, 7};
 
-        int[] result = new int[arr1.length];
-
         for (int i = 0; i < arr1.length; i++) {
-            result[i] = arr1[i] * arr2[i];
+            System.out.print( arr1[i] * arr2[i] +" ");
         }
 
-        System.out.print("Output: ");
-        for (int value : result) {
-            System.out.print(value + " ");
 
-            }
         }}
 
 
