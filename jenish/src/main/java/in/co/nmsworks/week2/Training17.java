@@ -1,7 +1,7 @@
 package in.co.nmsworks.week2;
 
 public class Training17 {
-    public void findLargest(int[] arr) {
+    public void findLargest(int[] arr){
         int largest = arr[0];
         for (int i = 1; i < arr.length ; i++) {
             if(largest < arr[i]){
