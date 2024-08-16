@@ -7,19 +7,20 @@ package in.co.nmsworks.week2;
  */
 public class Te8 {
     int a;
-    int b;
+
 
     public void hundredPosition(){
 
-            b=a/100;
-            switch (b){
-        case 1:
-            System.out.println("ONE");
-            break;
+            a=a/100;
+
+            switch (a){
+                case 1:
+                    System.out.println("ONE");
+                    break;
                 case 2:
                     System.out.println("TWO");
                     break;
-                case 3:
+                    case 3:
                     System.out.println("THREE");
                     break;
                 case 4:
