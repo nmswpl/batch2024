@@ -30,7 +30,7 @@ public class Runner {
 //        t9.divisibleByThree();
 
         TE10 t10 =  new TE10();
-        t10.divisibleBySeven();
+//        t10.divisibleBySeven();
 
         TE11 t11 = new TE11();
 //        t11.biggestOfThree();
@@ -42,7 +42,7 @@ public class Runner {
 //        t13.sumOfArray(new int[]{1,2,3,4,5,6,7});
 
         TE14 t14 = new TE14();
-//        t14.reverseArray(new char[]{'a','b','c','d'});
+        t14.reverseArray(new char[]{'a','b','c','d'});
 
         TE15 t15 =  new TE15();
 //        t15.countAndPrintEven(new int[]{2,3,4,5,6,7,8,9,1});
