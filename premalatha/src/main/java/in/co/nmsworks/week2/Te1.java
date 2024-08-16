@@ -7,11 +7,11 @@ public class Te1
 {
         public void train1()
         {
-           int n1=601 ,n2= 700;
-            for (int i = 700; i % 2==0 ; i--)
-                for (int j = 601; j <=i; j++) {
-                    System.out.println( i);
-                }
 
+            for (int i = 700; i > 601 ; i--) {
+                if (i % 2 == 0)
+                    System.out.println("Even numbers : " +i);
+
+            }
         }
 }
