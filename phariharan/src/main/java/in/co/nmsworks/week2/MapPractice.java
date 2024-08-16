@@ -6,7 +6,7 @@ import java.util.*;
 
 public class MapPractice {
 
-    static Map<Integer,Set<String>> movieMap = new HashMap<>();
+    Map<Integer,Set<String>> movieMap = new HashMap<>();
 
     private String[] getDataAsArray()
     {
@@ -167,51 +167,51 @@ public class MapPractice {
     public static void main(String[] args) {
         MapPractice mapExample = new MapPractice();
         String[] moviesDataArray = mapExample.getDataAsArray();
-        toList(moviesDataArray);
-        displayDetails();
+        mapExample.setMovieMap(moviesDataArray);
+        mapExample.displayDetails();
     }
 
-    public static void toList(String[] moviesDataArray){
+    public void setMovieMap(String[] moviesDataArray){
         List<String> movieNames = new ArrayList<>();
         List<Integer> year = new ArrayList<>();
 
-        for (String s : moviesDataArray) {
+        for (String s : moviesDataArray)
+        {
             String[] movieName = s.split("-");
             movieNames.add(movieName[0]);
             year.add(Integer.valueOf(movieName[1]));
         }
 
-        for (int i = 0; i < moviesDataArray.length; i++) {
+        for (int i = 0; i < movieNames.size(); i++)
+        {
             addMovieMap(year.get(i), movieNames.get(i));
         }
-
     }
 
-    public static void addMovieMap(Integer year, String name) {
-
+    public void addMovieMap(Integer year, String nameofMovie) {
         if (movieMap.containsKey(year))
         {
-            movieMap.put(year, Collections.singleton(name));
+            movieMap.get(year).add(nameofMovie);
         }
         else
         {
-            movieMap.put(year, Collections.singleton(name));
+            Set<String> name = new HashSet<>();
+            name.add(nameofMovie);
+            movieMap.put(year, name);
         }
-    }
-    public static void displayDetails(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Year to search  : ");
-        Integer name = sc.nextInt();
-        Set<String> nameSet = movieMap.get(name);
-        Set<String> receivedSet = movieMap.get(name);
-        if (receivedSet.isEmpty()){
-            System.out.println("Not Found");
-            return;
-        }
-        else{
-        for(String values : nameSet){
-            System.out.println(values);
-        }}
     }
 
+    public void displayDetails(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Year to search  : ");
+        Integer inputYear = sc.nextInt();
+        Set<String> nameSet = movieMap.getOrDefault(inputYear, Collections.emptySet());
+        if (nameSet.isEmpty()) {
+            System.out.println("movies not found...!");
+        } else {
+            for(String movie : nameSet){
+                System.out.println(movie);
+            }
+        }
+    }
 }
