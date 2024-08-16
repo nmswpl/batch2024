@@ -73,6 +73,10 @@ public class Runner2 {
         int[] a15 = {2,3,5,6};
         te15.printOddCount(a15);
 
+        String[] arr1 = {"a","b","c"};
+        Te14 te14 = new Te14();
+        te14.reverseArray(arr1);
+
         Te16 te16 = new Te16();
         te16.getFactorial(5);
         System.out.println();
