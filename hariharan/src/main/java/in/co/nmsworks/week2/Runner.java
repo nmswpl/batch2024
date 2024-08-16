@@ -3,6 +3,9 @@ package in.co.nmsworks.week2;
 public class Runner {
     public static void main(String[] args) {
 
+        Integer i = 78;
+        System.out.println(i);
+
         //Question 1
         Training1 training1 = new Training1();
 

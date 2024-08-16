@@ -5,6 +5,8 @@ import java.util.Scanner;
 // Program to multiply two Floating Numbers
 
 public class Question2 {
+
+
     public static void main(String[] args) {
         Scanner sc  = new Scanner(System.in);
 
@@ -16,4 +18,6 @@ public class Question2 {
 
         System.out.println("Answer:" + x *y);
     }
+
+
 }
