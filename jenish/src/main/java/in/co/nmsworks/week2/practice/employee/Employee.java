@@ -1,22 +1,29 @@
 package in.co.nmsworks.week2.practice.employee;
 
-/*public class Employee extends Person {
+public class Employee extends Person {
     private static int basicSalary = 10000;
     private static float pfFactor = (float) 6 /100;
     private int id;
     private float salaryFactor;
 
+    public float getSalaryFactor() {
+        return salaryFactor;
+    }
+
+    public void setSalaryFactor(float salaryFactor) {
+        this.salaryFactor = salaryFactor;
+    }
+
     public Employee(float salaryFactor){
-        salaryFactor = this.salaryFactor;
+        this.salaryFactor = salaryFactor;
     }
 
     public float calculateSalary(){
-        float salary = Employee.getBasicSalary() * salaryFactor;
-        return salary;
+        return Employee.getBasicSalary() * salaryFactor;
     }
-    public void calculatePf(){
-        float pf = Employee.getPfFactor() * calculateSalary();
-        System.out.println("PF of Trainee :: "+pf);
+
+    public float calculatePf(){
+       return Employee.getPfFactor() * calculateSalary();
     }
 
     public int getId() {
@@ -42,36 +49,65 @@ package in.co.nmsworks.week2.practice.employee;
         Employee.pfFactor = pfFactor;
     }
 
-    /*public static void main(String[] args) {
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id = " + id + "; "+
+                "name = " + getName()+ "; "+
+                "gender = " + getGender()+"; "+
+                "mobile number = " + getMobileNumber()+"; "+
+                "Salary = " + calculateSalary()+"; "+
+                "Pf = " + calculatePf()+
+                '}';
+    }
 
-        /*Trainee jenish = new Trainee();
+    public static void main(String[] args) {
+
+        Trainee jenish = new Trainee();
         jenish.setId(1);
         jenish.setName("Jenish");
         jenish.setMobileNumber("7856323678");
         jenish.setGender(Gender.MALE);
         jenish.calculateSalary();
-        jenish.calculatePf();*/
+        jenish.calculatePf();
+        System.out.println(jenish);
 
-        /*SoftwareEngineer sam = new SoftwareEngineer();
-        sam.setId(1);
-        sam.setName("Jenish");
-        sam.setMobileNumber("7856323678");
+        SoftwareEngineer sam = new SoftwareEngineer();
+        sam.setId(2);
+        sam.setName("Sam");
+        sam.setMobileNumber("7856327978");
         sam.setGender(Gender.MALE);
         sam.calculateSalary();
         sam.calculatePf();
-        sam.calculateSalary();
-        sam.calculatePf();
+        System.out.println(sam);
 
-        SeniorSoftwareEngineer sse1 = new SeniorSoftwareEngineer();
-        System.out.println("Salary of Senior Software Engineer :: "+sse1.calculateSalary());
-        sse1.calculatePf();
+        SeniorSoftwareEngineer mark = new SeniorSoftwareEngineer();
+        mark.setId(3);
+        mark.setName("Mark");
+        mark.setMobileNumber("6846732109");
+        mark.setGender(Gender.MALE);
+        mark.calculateSalary();
+        mark.calculatePf();
+        System.out.println(mark);
 
-        TeamLeader tl1 = new TeamLeader();
-        System.out.println("Salary of Team Leader :: "+tl1.calculateSalary());
-        tl1.calculatePf();
 
-        VicePresident vp1 = new VicePresident();
-        System.out.println("Salary of Vice President :: "+vp1.calculateSalary());
-        vp1.calculatePf();
+        TeamLeader kyle = new TeamLeader();
+        kyle.setId(4);
+        kyle.setName("Kyle");
+        kyle.setMobileNumber("6784563201");
+        kyle.setGender(Gender.FEMALE);
+        kyle.calculateSalary();
+        kyle.calculatePf();
+        System.out.println(kyle);
+
+
+        VicePresident ruby = new VicePresident();
+        ruby.setId(5);
+        ruby.setName("Ruby");
+        ruby.setMobileNumber("6730564821");
+        ruby.setGender(Gender.FEMALE);
+        ruby.calculateSalary();
+        ruby.calculatePf();
+        System.out.println(ruby);
     }
-}*/
+}

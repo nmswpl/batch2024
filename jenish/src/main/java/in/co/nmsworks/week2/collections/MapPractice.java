@@ -11,19 +11,27 @@ public class MapPractice {
         mp.moviesToMap(dataList);
     }
     public void moviesToMap(List<String> dataList){
-        Map<Integer,List<String>> moviesMap = new HashMap<>();
-        List<Integer> yearList = new ArrayList<>();
+        Map<Integer,List<String>> moviesMapByYear = new HashMap<>();
         List<String> moviesList = new ArrayList<>();
         for (String s : dataList) {
             Integer year = Integer.valueOf(s.split("-")[1]);
-            String movieName = String.valueOf(s.split("-")[0]);
-
-            if(yearList.contains(year)) {
+            if(moviesMapByYear.containsKey(year)){
+                moviesList = moviesMapByYear.get(year);
+                moviesList.add(s.split("-")[0]);
             }
-            yearList.add(year);
+            else{
+                moviesList = new ArrayList<>();
+                moviesList.add(s.split("-")[0]);
+            }
+            moviesMapByYear.putIfAbsent(year,moviesList);
         }
 
-
+        int countOfMovies = 0;
+        for (Integer year : moviesMapByYear.keySet()) {
+            countOfMovies += moviesMapByYear.get(year).size();
+            System.out.println("Released Year :: "+year+", "+"Number of Movies :: "+moviesMapByYear.get(year).size());
+        }
+        System.out.println("Total count of Movies :: "+countOfMovies);
     }
     private String[] getDataAsArray()
     {
