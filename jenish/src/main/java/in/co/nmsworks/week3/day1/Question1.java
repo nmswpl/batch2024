@@ -10,16 +10,14 @@ public class Question1 {
         colorsList.addAll(Arrays.asList("Red","Green","Blue","Yellow","Green", "Blue"));
 
         List<String> colorsList1 = new ArrayList<>();
+        colorsList1.add(colorsList.getFirst());
 
         for (int i = 1; i < colorsList.size(); i++) {
             String color = colorsList.get(i);
-            if (colorsList1.contains(color)) {
-                break;
-            }
-            else {
+            if (!colorsList1.contains(color)) {
                 colorsList1.add(color);
             }
         }
-        System.out.println(colorsList);
+        System.out.println(colorsList1);
     }
 }
