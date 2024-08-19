@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Q01 {
     public static void main(String[] args) {
-        List<String> colourList = new ArrayList<>(Arrays.asList(new String[]{"Red", "Green", "Blue", "Yellow", "Green", "Blue"}));
+        List<String> colourList = new ArrayList<>(Arrays.asList("Red", "Green", "Blue", "Yellow", "Green", "Blue"));
         Q01 q01 = new Q01();
         System.out.println(q01.removeDuplicatesFromList(colourList));
    }

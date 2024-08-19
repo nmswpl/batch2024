@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Q04 {
     public static void main(String[] args) {
-        List<String> colourList = new ArrayList<>(Arrays.asList(new String[]{"Red", "Green", "Blue", "Yellow", "Green", "Blue"}));
+        List<String> colourList = new ArrayList<>(Arrays.asList("Red", "Green", "Blue", "Yellow", "Green", "Blue"));
         Q04 q04 = new Q04();
         System.out.println(q04.findLongestColour(colourList));
 

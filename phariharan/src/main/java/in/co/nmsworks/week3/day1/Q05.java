@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Q05 {
     public static void main(String[] args) {
-        List<String> colourList1 = new ArrayList<>(Arrays.asList(new String[]{"Red", "Green", "Blue", "Yellow", "Green", "Blue"}));
+        List<String> colourList1 = new ArrayList<>(Arrays.asList("Red", "Green", "Blue", "Yellow", "Green", "Blue"));
         List<String> colourList2 = new ArrayList<>(Arrays.asList("Red", "Green", "Blue"));
         List<String> colourList3 = new ArrayList<>(Arrays.asList("Yellow", "Black", "White"));
         List<List<String>> colourListCombined = new ArrayList<>();

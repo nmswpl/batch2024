@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Q03 {
     public static void main(String[] args) {
-        List<String> colourList = new ArrayList<>(Arrays.asList(new String[]{"Red", "Green", "Blue", "Yellow", "Orange"}));
+        List<String> colourList = new ArrayList<>(Arrays.asList("Red", "Green", "Blue", "Yellow", "Orange"));
         Q03 q03 = new Q03();
         System.out.println(q03.extractByIndex(colourList,1,3));
     }
