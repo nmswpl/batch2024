@@ -19,7 +19,7 @@ public class Program3 {
         Set<Integer> primes = new HashSet<>();
         primes.add(2);
         for (int i = 2; i < 1000; i++) {
-            if (checkPrime(i) == 1) {
+            if (addPrimesToSet(i) == 1) {
                 primes.add(i);
             }
         }
@@ -32,7 +32,7 @@ public class Program3 {
 
     }
 
-    private int checkPrime(int val) {
+    private int addPrimesToSet(int val) {
         if (val == 0) {
             return -1;
         } else if (val == 1) {

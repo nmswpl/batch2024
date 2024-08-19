@@ -57,9 +57,9 @@ public class Program4 {
         t3.setBranchcode("SA0101");
         t3.setSubjectwithStudents(subjectWithStudentsSalem);
 
-        System.out.println(t1);
-        System.out.println(t2);
-        System.out.println(t3);
+        System.out.println("branch Name = "+t1.getBranchName()+"\nBrand Code = "+t1.getBranchcode()+"\nSubjects With Students = "+t1.getSubjectwithStudents());
+        System.out.println("branch Name = "+t2.getBranchName()+"\nBrand Code = "+t2.getBranchcode()+"\nSubjects With Students = "+t2.getSubjectwithStudents());
+        System.out.println("branch Name = "+t3.getBranchName()+"\nBrand Code = "+t3.getBranchcode()+"\nSubjects With Students = "+t3.getSubjectwithStudents());
 
 
     }
