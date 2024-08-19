@@ -17,5 +17,6 @@ public class Question3 {
             colorList.add(colors.get(i));
         }
         System.out.println(colorList);
+
     }
 }
