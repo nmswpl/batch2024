@@ -5,35 +5,40 @@ Add the Following Vehicles to a Collection.
    Iterate the collection, If it has 2 wheels, print "<Vehicle Name> is a Two Wheeler".
  */
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Vehicles {
-    String vehiclesType;
-    Integer numOfWheels;
+    public void twoWheeler() {
+        List<String> vehiclesList = new ArrayList<>();
+        vehiclesList.add("bike");
+        vehiclesList.add("car");
+        vehiclesList.add("bus");
+        vehiclesList.add("cycle");
+        vehiclesList.add("plane");
+        vehiclesList.add("jeep");
+        vehiclesList.add("ship");
+        vehiclesList.add("auto");
+        vehiclesList.add("boat");
+        vehiclesList.add("helicopter");
 
-    public String getVehiclesType() {
-        return vehiclesType;
+        for(String vehicle : vehiclesList){
+            if("bike".equalsIgnoreCase(vehicle) || "cycle".equalsIgnoreCase(vehicle)){
+                System.out.println(vehicle+ " is a two wheelers");
+            }
+        }
+
+
     }
 
-    public void setVehiclesType(String vehiclesType) {
-        this.vehiclesType = vehiclesType;
-    }
 
-    public Integer getNumOfWheels() {
-        return numOfWheels;
-    }
 
-    public void setNumOfWheels(Integer numOfWheels) {
-        this.numOfWheels = numOfWheels;
-    }
 
-    public Vehicles(String vehiclesType, Integer numOfWheels){
-        this.vehiclesType=vehiclesType;
-        this.numOfWheels=numOfWheels;
-    }
-    private static void vehiclesCollection(int i, List<Vehicles> noOfWheels0) {
-    }
+
+
+
+
 
 }

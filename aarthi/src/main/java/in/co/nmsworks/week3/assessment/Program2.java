@@ -9,28 +9,44 @@ Write a program to find if a given number (less than 1000) is prime or not using
  */
 
 public class Program2 {
-    int count = 0;
-    Set<Integer> num=new HashSet<>();
-    public void primeNum() {
-        for(int i = 1;i < 1000;i++){
-            if ( i == 2) {
-                num.add(i);
-                System.out.println("Prime");
-            }
-            else if (i % i == 0) {
-                num.add(i);
+
+    Set<Integer> primes = new HashSet<>();
+
+    public boolean isPrime(int number) {
+        int count = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
                 count++;
             }
         }
-        if (count == 2) {
-            System.out.println("Prime");
-        } else {
-            System.out.println("Not a Prime");
+            if (count == 2) {
+                return true;
+            } else {
+                return false;
+            }
         }
-        int[]arr={3,64,78,89};
-        for (arr array : num){
-            System.out.println(array);
-        }
+        public void primeNum(){
+            for (int i = 1; i <= 1000 ; i++) {
+                boolean primeNum = isPrime(i);
+                if(primeNum){
+                    int num = i;
+                    primes.add(i);
+                }
+
+            }
+            System.out.println(primes);
+            System.out.println(primes.size());
+
+            int[] array = {2,78,89,57};
+            for (int i = 0; i <array.length ; i++) {
+                if(primes.contains(array[i])) {
+                    System.out.println(array[i] + " is a prime number");
+                }else {
+                    System.out.println(array[i] + " is not a prime number");
+                }
+            }
     }
 }
+
+
 
