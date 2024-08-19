@@ -10,13 +10,9 @@ import java.util.List;
 
 public class Question3 {
     public static void main(String[] args) {
-        List<String> colors = new ArrayList<>(Arrays.asList("Red","Green","Blue","Yellow","Orange"));
-        List<String> colorList = new ArrayList<>();
+        List<String> colors = new ArrayList<>(Arrays.asList("Red", "Green", "Blue", "Yellow", "Orange"));
 
-        for(int i=1;i<colors.size()-1;i++){
-            colorList.add(colors.get(i));
-        }
-        System.out.println(colorList);
+        System.out.println(colors.subList(1, 4));
 
     }
 }
