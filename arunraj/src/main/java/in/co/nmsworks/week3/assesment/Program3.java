@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Program3 {
-    public void addElements() {
+    public void addElements(int n) {
         Set<Integer> numbers = new HashSet<>();
         for (int i = 1; i <= 1000; i++) {
                numbers.add(i);
@@ -19,6 +19,12 @@ public class Program3 {
             if(j%i!=0){
                 primeNumbers.add(j);
             }
+        }
+        if(primeNumbers.contains(n)){
+            System.out.println("The number is Prime");
+        }
+        else {
+            System.out.println("The number is not Prime");
         }
     }
 }

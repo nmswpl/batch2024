@@ -37,8 +37,13 @@ package in.co.nmsworks.week3.assesment;
         +----------------------------------------------------------------+*/
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Program4 {
-    public void createMap(){
+    public static void main(String[] args) {
+
+        Map<String ,Integer> tutionCenter = new HashMap<>();
 
     }
 }

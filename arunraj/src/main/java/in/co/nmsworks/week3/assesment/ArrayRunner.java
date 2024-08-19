@@ -8,8 +8,9 @@ public class ArrayRunner {
     Program2 p2 = new Program2();
     p2.countPrintEven();*/
 
-    Program3 p3 = new Program3();
-    p3.addElements();
+    /*Program3 p3 = new Program3();
+    p3.addElements(9);*/
+
 
     }
 }
