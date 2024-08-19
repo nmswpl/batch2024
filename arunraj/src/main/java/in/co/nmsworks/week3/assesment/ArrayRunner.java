@@ -9,7 +9,7 @@ public class ArrayRunner {
     p2.countPrintEven();*/
 
     Program3 p3 = new Program3();
-    p3.isPrime(10);
+    p3.addElements();
 
     }
 }

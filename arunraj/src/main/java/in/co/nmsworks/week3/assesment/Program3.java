@@ -8,33 +8,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Program3 {
-    public void isPrime(int n){
+    public void addElements() {
         Set<Integer> numbers = new HashSet<>();
-        int j=1;
-        for(int i=1;i<=1000;i++,j++) {
-            if (j % i != 0) {
-                numbers.add(j);
+        for (int i = 1; i <= 1000; i++) {
+               numbers.add(i);
             }
-        }
-        boolean isTrue = numbers.contains(n);
-        System.out.println(isTrue);
-        if(isTrue){
-            System.out.println("The number is notPrime");
-        }
-        else {
-            System.out.println("The number is Prime");
+        Set<Integer> primeNumbers = new HashSet<>();
+        int j=1;
+        for (Integer i : numbers){
+            if(j%i!=0){
+                primeNumbers.add(j);
+            }
         }
     }
 }
-
-/*int flag=0;
-        for(int i=2;i<=isPrimeOrNot.size();i++){
-            if(n%i==0){
-                System.out.println("The number is prime");
-                flag=1;
-                break;
-            }
-        }
-        if(flag==0){
-            System.out.println("The number is not prime");
-        }*/
