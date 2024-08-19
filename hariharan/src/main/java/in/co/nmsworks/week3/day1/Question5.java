@@ -9,6 +9,7 @@ public class Question5 {
     //Write a method that takes a list of lists and returns a single list containing all elements of the nested lists.
 
     public Question5(){
+
         List<List<Integer>> listOfList = new ArrayList<>();
 
 
@@ -29,9 +30,7 @@ public class Question5 {
         List<Integer> totalNumberList = new ArrayList<>();
 
         for(int i =0;i<listOfList.size();i++){
-            for(int j =0;j<listOfList.get(i).size();j++) {
-                totalNumberList.add(listOfList.get(i).get(j));
-            }
+           totalNumberList.addAll(listOfList.get(i));
         }
 
         System.out.println("Final List: " +totalNumberList +"\n");
