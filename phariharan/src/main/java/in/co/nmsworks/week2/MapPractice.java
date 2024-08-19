@@ -1,7 +1,5 @@
 package in.co.nmsworks.week2;
 
-import in.co.nmsworks.week2.collections.contactdirectory.Contact;
-
 import java.util.*;
 
 public class MapPractice {
