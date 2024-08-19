@@ -1,30 +1,51 @@
 package in.co.nmsworks.week3.assessment;
-
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-
 /**
  * Write a program to find if a given number (less than 1000) is prime or not using Set.
  */
 
+import java.util.HashSet;
+import java.util.Set;
+
+
 public class Program3 {
 
-    Scanner scan = new Scanner(System.in);
-    int num = scan.nextInt();
+    Set<Integer> primes = new HashSet<>();
 
-    public void prime() {
-        Set<Integer> nums = new HashSet<>();
-        nums.add(2);
-        for (int i = 3; i < 1000; i++) {
-            for (int j = 3; j <= Math.sqrt(num); j++) {
-                if (num % i == 0) {
-                    nums.add(i);
-                    nums.add(num / i);
-                    System.out.println("Prime");
-                }
+    public boolean isPrime(int number) {
+        int count = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                count++;
             }
         }
-        System.out.println("not prime");
+        if (count == 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void printNum() {
+        for (int i = 1; i <= 1000; i++) {
+            boolean primeNum = isPrime(i);
+            if (primeNum) {
+                int num = i;
+                primes.add(i);
+            }
+        }
+
+        System.out.println(primes);
+        System.out.println(primes.size());
+
+        int[] array = {2, 98, 71, 37};
+        for (int i = 0; i < array.length; i++) {
+            if (primes.contains(array[i])) {
+                System.out.println(array[i] + " is a prime number");
+            } else {
+                System.out.println(array[i] + " is not a prime number");
+            }
+        }
     }
 }
+
+
