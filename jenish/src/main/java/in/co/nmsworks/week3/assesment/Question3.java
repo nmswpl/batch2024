@@ -8,9 +8,9 @@ Write a program to find if a given number (less than 1000) is prime or not using
  */
 
 public class Question3 {
-    Set<Integer> numbers = new HashSet<>();
+    Set<Integer> primeNumbers = new HashSet<>();
 
-    public boolean primeOrNot(int num) {
+    public boolean isPrime(int num) {
         if (num <= 1) {
             return false;
         }
@@ -29,17 +29,20 @@ public class Question3 {
         return true;
     }
 
-    public void computePrimes(int num) {
+    public void computePrimes() {
         for (int i = 2; i <= 1000; i++) {
-            if (primeOrNot(i)) {
-                numbers.add(i);
+            if (isPrime(i)) {
+                primeNumbers.add(i);
             }
         }
-        if(numbers.contains(num)){
-            System.out.println("It is a prime number");
+    }
+
+    public void primeOrNot(int num){
+        if(primeNumbers.contains(num)){
+            System.out.println(num+" is a prime number");
         }
         else{
-            System.out.println("It is not a prime number");
+            System.out.println(num+" is not a prime number");
         }
     }
 }

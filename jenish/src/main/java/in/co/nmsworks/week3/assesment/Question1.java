@@ -16,7 +16,7 @@ public class Question1 {
         vehicles.put("Bike", 2);
         vehicles.put("Bus", 8);
         vehicles.put("Cycle", 2);
-        vehicles.put("Plane", 2);
+        vehicles.put("Plane", 1);
         vehicles.put("Jeep", 4);
         vehicles.put("Ship", 0);
         vehicles.put("Auto", 3);
