@@ -8,7 +8,6 @@ public class Runner2 {
         Integer[] array1 = {1,2,3,4,5,6,7,8,9,11,10};
         Runner2 evenNumbers = new Runner2();
         evenNumbers.noOfEvenElements(array1);
-
     }
 
     public void noOfEvenElements(Integer[] array1){
