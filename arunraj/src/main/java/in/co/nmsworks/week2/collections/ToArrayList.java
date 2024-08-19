@@ -1,40 +1,29 @@
 package in.co.nmsworks.week2.collections;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class MapPractice {
+public class ToArrayList {
     public static void main(String[] args) {
-    MapPractice mp = new MapPractice();
-    String[] data = mp.getDataAsArray();
-    List<String> moviesByYear=new ArrayList<>();
+        ToArrayList sta = new ToArrayList();
+        String[] stringData = sta.getDataAsArray();
+        String[] moviesAndYear = new String[0];
 
-    for(String i:data){
-        moviesByYear.add(i);
-    }
+        for(String i : stringData){
+            moviesAndYear = i.split("-");
+            Integer.parseInt(moviesAndYear[1]);
+        }
 
-    Map<String,Integer> moviesAndYears = new HashMap<>();
+        List<String> moviesAndYears = new ArrayList<>();
+        for(String i : moviesAndYear){
 
-    for (String movieYear : moviesByYear){
-        String[] movieAndYear = movieYear.split("-");
-        Integer year = Integer.parseInt(movieAndYear[1]);
-        String movie = movieAndYear[0];
-        /*String typeName = movieYear.getClass().getName();
-        System.out.println("Element: " + movieYear + " | Type: " + typeName);*/
-        moviesAndYears.put(movie,year);
-    }
-
-    /*for(String i : moviesAndYears.keySet()){
-        System.out.println(i+","+moviesAndYears.get(i));
-    }*/
-    }
-
-    public void mapCreate(){
-
+        }
 
     }
-    private String[] getDataAsArray()
-    {
-        return new String[] {
+
+    private String[] getDataAsArray() {
+        return new String[]{
                 "Ninaithale Inikkum-1979",
                 "Kudiyirundha Koyil-1968",
                 "Ulagam Suttrum Valiban-1973",
@@ -187,5 +176,4 @@ public class MapPractice {
                 "Kumbakarna-1960"
         };
     }
-
 }
