@@ -13,7 +13,7 @@ public class Program1 {
         Program2 p2 = new Program2();
         p2.evenElements();
         Program3 p3 = new Program3();
-        p3.primeNumber(11);
+        p3.primeNumber(13);
         Vehicles v1 = new Vehicles(4, "Car");
         Vehicles v2 = new Vehicles(2, "Bike");
         Vehicles v3 = new Vehicles(4, "Bus");

@@ -8,7 +8,8 @@ public class Program3 {
     int count = 0;
     Set<Integer> prime = new HashSet<>();
 
-    public void primeNumber(int num) {
+    public void primeNumber(int num)
+    {
         if (num == 2) {
             System.out.println("Prime");
         } else {
