@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class TutionCenter {
-    private String BranchName;
+public class TuitionCenter {
+    private String branchName;
     private String branchCode;
     Map<String,Integer> noOfStudentPerSubjects = new HashMap<>();
 
     public String getBranchName() {
-        return BranchName;
+        return branchName;
     }
 
     public void setBranchName(String branchName) {
-        BranchName = branchName;
+        this.branchName = branchName;
     }
 
     public String getBranchCode() {
@@ -35,8 +35,8 @@ public class TutionCenter {
         noOfStudentPerSubjects.put(subject,noOfStudents);
     }
 
-    public TutionCenter(String branchName, String branchCode) {
-        BranchName = branchName;
+    public TuitionCenter(String branchName, String branchCode) {
+        this.branchName = branchName;
         this.branchCode = branchCode;
     }
 
@@ -44,12 +44,18 @@ public class TutionCenter {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TutionCenter that = (TutionCenter) o;
-        return Objects.equals(BranchName, that.BranchName) && Objects.equals(branchCode, that.branchCode) && Objects.equals(noOfStudentPerSubjects, that.noOfStudentPerSubjects);
+        TuitionCenter that = (TuitionCenter) o;
+        return Objects.equals(branchName, that.branchName) && Objects.equals(branchCode, that.branchCode) && Objects.equals(noOfStudentPerSubjects, that.noOfStudentPerSubjects);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(BranchName, branchCode, noOfStudentPerSubjects);
+        return Objects.hash(branchName, branchCode, noOfStudentPerSubjects);
+    }
+
+    @Override
+    public String toString() {
+        return  "______________________"+"\nBranchName : " + branchName + "\n" +
+                "BranchCode : " + branchCode +"\n______________________";
     }
 }
