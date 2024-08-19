@@ -44,6 +44,8 @@ public class TestExersice3 {
                 System.out.println(number + " is not a prime number");
             }
         }
+
+
     }
 }
 

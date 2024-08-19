@@ -6,20 +6,8 @@ import java.util.*;
 
 public class TutionCenter {
 
-    String branchName;
-    String branchCode;
-
-
-    public String[] getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String[] subject) {
-        this.subject = subject;
-    }
-
-    String[] subject;
-    Integer numberOfStudents;
+    private String branchName;
+    private String branchCode;
 
     public String getBranchName() {
         return branchName;
@@ -33,49 +21,35 @@ public class TutionCenter {
         return branchCode;
     }
 
-    public void setBranchCode(String branchCode) {
-        this.branchCode = branchCode;
-    }
-
-
     @Override
     public String toString() {
         return "TutionCenter{" +
                 "branchName='" + branchName + '\'' +
                 ", branchCode='" + branchCode + '\'' +
-                ", subject=" + Arrays.toString(subject) +
-                ", numberOfStudents=" + numberOfStudents +
+                ", subjectToStudents=" + subjectToStudents +
                 '}';
     }
 
-    public Integer getNumberOfStudents() {
-        return numberOfStudents;
+    public void setBranchCode(String branchCode) {
+        this.branchCode = branchCode;
     }
 
-    public void setNumberOfStudents(Integer numberOfStudents) {
-        this.numberOfStudents = numberOfStudents;
+    public Map<String, Integer> getSubjectToStudents() {
+        return subjectToStudents;
     }
 
-    public TutionCenter(){
-
-        List<String> chennaiSubject = new ArrayList<>();
-        chennaiSubject.addAll(Arrays.asList("Physics","Chemistry","Biology","Maths","Hindhi"));
-
-        List<String> salemSubject = new ArrayList<>();
-        salemSubject.addAll(Arrays.asList("Physics","Chemistry","Biology","Maths"));
-
-        List<String> maduraiSubjects = new ArrayList<>();
-        maduraiSubjects.addAll(Arrays.asList("Physics","Chemistry","Biology","Maths"));
-
-
-        Map<String, List> mapOfTutuion = new HashMap<>();
-        mapOfTutuion.put("CH01",chennaiSubject);
-        mapOfTutuion.put("SA01",salemSubject);
-        mapOfTutuion.put("MD01",maduraiSubjects);
-
-        System.out.println(mapOfTutuion);
-
+    public void setSubjectToStudents(Map<String, Integer> subjectToStudents) {
+        this.subjectToStudents = subjectToStudents;
     }
 
+    private  Map<String, Integer> subjectToStudents = new HashMap<>();
+
+    public TutionCenter(String branchName, String branchCode) {
+        this.branchName = branchName;
+        this.branchCode = branchCode;
+    }
 
 }
+
+
+

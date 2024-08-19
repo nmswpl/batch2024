@@ -1,7 +1,5 @@
 package in.co.nmsworks.week3.assessment;
 
-import java.util.*;
-
 //Given an array of integers, Write a Program to count and print number of even elements in the array.
 
 public class TestExersice2 {
@@ -16,6 +14,7 @@ public class TestExersice2 {
       }
 
         System.out.println("Number of Even Elements: "+count);
+
 
     }
 }
