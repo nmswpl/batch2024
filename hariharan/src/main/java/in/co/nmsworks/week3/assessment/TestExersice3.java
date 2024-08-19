@@ -9,7 +9,9 @@ import java.util.Set;
 //Write a program to find if a given number (less than 1000) is prime or not using Set.
 
 public class TestExersice3 {
-    public TestExersice3(){
+    public TestExersice3() {
+
+
         int i = 0;
         int num = 0;
 
@@ -32,7 +34,7 @@ public class TestExersice3 {
         Integer[] numbers = new Integer[size];
 
         for (int j = 0; j < size; j++) {
-            numbers[i] = sc.nextInt();
+            numbers[j] = sc.nextInt();
         }
 
         for (Integer number : numbers) {
