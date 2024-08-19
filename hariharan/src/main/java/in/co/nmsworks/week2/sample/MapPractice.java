@@ -32,17 +32,30 @@ public class MapPractice {
 
 
             if(mapOfMoviesData.containsKey(year)){
-               mapOfMoviesData.get(year).add(new String[] {movieNames});
+              List<String> list =new ArrayList<>();
+              list.addAll(mapOfMoviesData.get(year));
+              list.add(movieNames);
+              mapOfMoviesData.put(year,list);
             }else{
-                moviesName.add(new String[]{movieNames});
-                mapOfMoviesData.put(year, moviesName);
+             List<String> list = new ArrayList<>();
+             list.add(movieNames);
+             mapOfMoviesData.put(year,list);
             }
-
-            moviesName.clear();
         }
 
 
-        System.out.println(mapOfMoviesData);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the year");
+        Integer year = sc.nextInt();
+
+        if(mapOfMoviesData.containsKey(year)){
+            List<String> movieList = mapOfMoviesData.get(year);
+            for (String movie : movieList){
+                System.out.println(movie);
+            }
+
+            System.out.println("Number of Movies:"+ mapOfMoviesData.get(year).size());
+        }
 
 
     }

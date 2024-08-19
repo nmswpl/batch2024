@@ -22,5 +22,7 @@ public class Question2 {
             System.out.println(ite.next());
         }
         System.out.println("\n");
+
+
     }
 }
