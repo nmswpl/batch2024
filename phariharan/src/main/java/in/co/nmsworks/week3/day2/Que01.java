@@ -12,15 +12,15 @@ import java.io.IOException;
  */
 public class Que01 {
     public static void main(String[] args) throws IOException {
-        FileWriter fw = new FileWriter("/home/nms/output.txt");
-        BufferedWriter bw = new BufferedWriter(fw);
+        FileWriter fileWriter = new FileWriter("/home/nms/Desktop/output.txt");
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         String[] stringArray = new String[]{"Hello, World!","Java file handling.","BufferedReader and BufferedWriter."};
         for (String value : stringArray) {
-            bw.write(value);
-            bw.newLine();
+            bufferedWriter.write(value);
+            bufferedWriter.newLine();
         }
         System.out.println("lines write in output.txt");
-        bw.close();
-        fw.close();
+        bufferedWriter.close();
+        fileWriter.close();
     }
 }

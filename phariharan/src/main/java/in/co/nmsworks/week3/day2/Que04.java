@@ -8,19 +8,19 @@ import java.io.*;
 
 public class Que04 {
     public static void main(String[] args) throws IOException {
-        FileReader fr = new FileReader("/home/nms/Downloads/input.txt");
-        FileWriter fw = new FileWriter("/home/nms/Downloads/output.txt");
-        BufferedReader br = new BufferedReader(fr);
-        BufferedWriter bw = new BufferedWriter(fw);
-        String string = br.readLine();
+        FileReader fileReader = new FileReader("/home/nms/Downloads/input.txt");
+        FileWriter fileWriter = new FileWriter("/home/nms/Downloads/output.txt");
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        String string = bufferedReader.readLine();
         while (string != null) {
-            bw.write(string);
-            bw.newLine();
-            string = br.readLine();
+            bufferedWriter.write(string);
+            bufferedWriter.newLine();
+            string = bufferedReader.readLine();
         }
-        bw.close();
-        br.close();
-        fr.close();
-        fw.close();
+        bufferedWriter.close();
+        bufferedReader.close();
+        fileReader.close();
+        fileWriter.close();
     }
 }

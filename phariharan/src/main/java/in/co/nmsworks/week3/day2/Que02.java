@@ -7,14 +7,14 @@ import java.io.*;
  */
 public class Que02 {
     public static void main(String[] args) throws IOException {
-        FileReader fr = new FileReader("/home/nms/Downloads/input.txt");
-        BufferedReader br = new BufferedReader(fr);
-        String string = br.readLine();
+        FileReader fileReader = new FileReader("/home/nms/Downloads/input.txt");
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String string = bufferedReader.readLine();
         while (string != null) {
             System.out.println(string);
-            string = br.readLine();
+            string = bufferedReader.readLine();
         }
-        br.close();
-        fr.close();
+        bufferedReader.close();
+        fileReader.close();
     }
 }

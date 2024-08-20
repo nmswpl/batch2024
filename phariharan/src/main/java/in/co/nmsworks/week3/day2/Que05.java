@@ -9,10 +9,10 @@ import java.io.*;
 
 public class Que05 {
     public static void main(String[] args) throws IOException {
-        FileWriter fw = new FileWriter("/home/nms/Downloads/input.txt", true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.append("Appending new content.");
-        bw.close();
-        fw.close();
+        FileWriter fileWriter = new FileWriter("/home/nms/Downloads/input.txt", true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        bufferedWriter.append("Appending new content.");
+        bufferedWriter.close();
+        fileWriter.close();
     }
 }

@@ -10,11 +10,11 @@ import java.io.IOException;
 
 public class Que03 {
     public static void main(String[] args) throws IOException {
-        FileReader fr = new FileReader("/home/nms/Downloads/input.txt");
-        BufferedReader br = new BufferedReader(fr);
+        FileReader fileReader = new FileReader("/home/nms/Downloads/input.txt");
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         int count = 0 ;
-        while (br.readLine() != null) {
+        while (bufferedReader.readLine() != null) {
             count +=1;
         }
         System.out.println("No of lines in the input.txt is "+count);
