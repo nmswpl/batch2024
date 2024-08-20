@@ -19,4 +19,9 @@ public class Question6 {
         bufferedReader.close();
         reader.close();
     }
+
+    public static void main(String[] args) throws IOException {
+        Question6 q6 = new Question6();
+        q6.matchesPattern();
+    }
 }

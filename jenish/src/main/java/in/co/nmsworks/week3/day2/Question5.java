@@ -11,4 +11,9 @@ public class Question5 {
         bufferedWriter.close();
         writer.close();
     }
+
+    public static void main(String[] args) throws IOException {
+        Question5 q5 = new Question5();
+        q5.addNewLine();
+    }
 }

@@ -15,4 +15,9 @@ public class Question2 {
         bw.close();
         fw.close();
     }
+
+    public static void main(String[] args) throws IOException {
+        Question2 q2 = new Question2();
+        q2.printLineByLine();
+    }
 }

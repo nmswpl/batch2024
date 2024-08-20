@@ -21,4 +21,9 @@ public class Question3 {
 
         System.out.println("No of lines in the File :: "+count);
     }
+
+    public static void main(String[] args) throws IOException {
+        Question3 q3 = new Question3();
+        q3.printNoOfLines();
+    }
 }

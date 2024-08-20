@@ -17,4 +17,9 @@ public class Question1 {
         bw.close();
         fw.close();
     }
+
+    public static void main(String[] args) throws IOException {
+        Question1 q1 = new Question1();
+        q1.writeAFile();
+    }
 }

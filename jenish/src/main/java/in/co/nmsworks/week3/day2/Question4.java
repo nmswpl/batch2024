@@ -23,4 +23,9 @@ public class Question4 {
         bufferedReader.close();
         reader.close();
     }
+
+    public static void main(String[] args) throws IOException {
+        Question4 q4 = new Question4();
+        q4.copiesContent();
+    }
 }
