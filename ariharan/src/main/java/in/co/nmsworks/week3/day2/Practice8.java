@@ -24,6 +24,8 @@ public class Practice8 {
             System.out.println(object);
 
         }
+        br.close();
+        fr.close();
 
     }
 
