@@ -16,8 +16,6 @@ public class Que08 {
         String string = bufferedReader.readLine();
         string = bufferedReader.readLine();
         List<Candidates> candidatesList = new ArrayList<>();
-        Candidates candidate = null;
-        int count = 0;
         while (string != null) {
             String[] stringArray = string.split(",");
             candidatesList.add(new Candidates(Long.valueOf(stringArray[1]),stringArray[2],stringArray[3],stringArray[4],stringArray[5],stringArray[6],stringArray[7]));
