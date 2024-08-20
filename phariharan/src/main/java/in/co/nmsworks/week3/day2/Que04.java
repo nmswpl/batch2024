@@ -21,5 +21,6 @@ public class Que04 {
         bw.close();
         br.close();
         fr.close();
+        fw.close();
     }
 }
