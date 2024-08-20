@@ -1,6 +1,6 @@
 package in.co.nmsworks.week3.day2;
 
-public class Candidates {
+public class Candidate {
     private Long regNo;
     private String Name;
     private String collegeDepartment;
@@ -9,7 +9,7 @@ public class Candidates {
     private String emailId;
     private String Status;
 
-    public Candidates(Long regNo, String name, String collegeDepartment, String collegeName, String department, String emailId, String status) {
+    public Candidate(Long regNo, String name, String collegeDepartment, String collegeName, String department, String emailId, String status) {
         this.regNo = regNo;
         Name = name;
         this.collegeDepartment = collegeDepartment;
