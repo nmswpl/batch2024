@@ -18,10 +18,15 @@ public class Runner {
 
 //        Practice5 p5=new Practice5();
 //        p5.appendingContentInFile();
+//
+//        Practice6 p6=new Practice6();
+//        p6.searchWordInFile();
 
-        Practice6 p6=new Practice6();
-        p6.searchWordInFile();
+//        Practice7 p7=new Practice7();
+//        p7.replaceStringInFile();
 
+        Practice8 p8=new Practice8();
+        p8.fileParsing();
 
 
     }
