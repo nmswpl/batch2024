@@ -13,11 +13,9 @@ public class Question4 {
 
         List<String> colors = new ArrayList<>();
         colors.addAll(Arrays.asList("Red", "Green", "Blue", "Yellow", "Orange"));
-        int maximumLength =0;
         String longestWord = colors.get(0);
         for (String color : colors) {
-            if(color.length() >= maximumLength){
-                maximumLength = color.length();
+            if(color.length() >= longestWord.length()){
                 longestWord = color;
             }
         }
