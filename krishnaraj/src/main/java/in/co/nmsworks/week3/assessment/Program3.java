@@ -8,27 +8,28 @@ import java.util.Scanner;
  *
  */
 public class Program3 {
-    public void checkPrime() {
-        List<Integer> primeNumbersList = new ArrayList<>();
-        for (int i = 1; i < 1000; i++) {
-            int primeNumber = i;
-            if (primeNumber <= 1) {
-            } else if (primeNumber == 2 || primeNumber == 3) {
-                primeNumbersList.add(i);
-            } else if (primeNumber==5) {
-                primeNumbersList.add(i);
-            } else if (primeNumber % 2 == 0 ||primeNumber % 3 == 0) {
-            } else if (primeNumber % 5 == 0) {
-            } else {
-                primeNumbersList.add(i);
+    List<Integer> primeNumbersList = new ArrayList<>();
+    public void addPrime(int number){
+        int count = 0;
+        for (int i = 1; i <= number/2; i++) {
+            if(number % i == 0){
+                count++;
             }
         }
-        /**for (Integer val: primeNumbersList){
-            System.out.println(val);
+        if (count ==1){
+            primeNumbersList.add(number);
         }
-**/
 
+    }
+    public void makingPrimeList(){
+        for (int i = 1; i < 1000; i++){
+            addPrime(i);
+        }
+    }
+
+    public void checkPrimeUsingSet(){
         Scanner sc = new Scanner(System.in);
+        makingPrimeList();
         System.out.println("Enter a number : ");
         int checkNumber = sc.nextInt();
         if (primeNumbersList.contains(checkNumber)) {
@@ -37,5 +38,4 @@ public class Program3 {
             System.out.println("this is not prime : " + checkNumber);
         }
     }
-
 }

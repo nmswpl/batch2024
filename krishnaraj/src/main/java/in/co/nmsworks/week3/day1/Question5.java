@@ -19,8 +19,8 @@ public class Question5 {
 
         List<Integer> resultList = new ArrayList<>();
         for (int i = 0; i < nestedList.size(); i++) {
-            for (int j = 0; j < list1.size(); j++) {
-                resultList.add(list1.get(j));
+            for (int j = 0; j < nestedList.get(i).size(); j++) {
+                resultList.add((Integer) nestedList.get(i).get(j));
             }
         }
 

@@ -39,7 +39,7 @@ public class Runner {
         program2.countEvenNumbers();
 
         Program3 program3 = new Program3();
-        program3.checkPrime();
+        program3.checkPrimeUsingSet();
 
         Program4 tuitionCenter1 = new Program4("Chennai", "CH01", "Physics", 30);
         Program4 tuitionCenter2 = new Program4("Salem", "Sa01", "Physics", 25);

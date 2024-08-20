@@ -50,4 +50,5 @@ public class Program4 {
     public void setNumOfStudents(int numOfStudents) {
         this.numOfStudents = numOfStudents;
     }
+
 }
