@@ -10,16 +10,14 @@ import java.util.List;
 public class Question8 {
 
 
-    static List<Candidate> students = new ArrayList<>();
+    public static List<Candidate> students = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static List<Candidate> getCandidateDetails() {
 
-        try {
-//            Reader
-            FileReader fr = new FileReader("/home/nms/Candidates.csv");
-            BufferedReader br = new BufferedReader(fr);
+        try (FileReader fr = new FileReader("/home/nms/Candidates.csv");
+             BufferedReader br = new BufferedReader(fr)) {
 
-
+//            skipping the headers
             String headers = br.readLine();
 
             String line = br.readLine();
@@ -29,34 +27,33 @@ public class Question8 {
                 addDetails(details);
                 line = br.readLine();
             }
-            br.close();
-
         } catch (IOException e) {
             System.out.println("Something went wrong!");
             e.printStackTrace();
         }
 
-//        printing the students
-        for (Candidate student : students) {
-            System.out.println(student);
-        }
-
-
+        return students;
     }
 
-    static void addDetails(String[] details) {
-        int sno = Integer.valueOf(details[0]);
-        long registerNo = Long.valueOf(details[1]);
+
+    public static void addDetails(String[] details) {
+        int sno = Integer.parseInt(details[0]);
+        long registerNo = Long.parseLong(details[1]);
         String name = details[2];
         String dept = details[3];
         String collegeName = details[4];
         String department = details[5];
         String email = details[6];
         String status = details[7];
+        students.add(new Candidate(sno, registerNo, name, dept, collegeName, department, email, status));
 
-        Candidate c = new Candidate(sno, registerNo, name, dept, collegeName, department, email, status);
-        students.add(c);
     }
 
+    public static void main(String[] args) {
+
+        for (Candidate candidateDetail : Question8.getCandidateDetails()) {
+            System.out.println(candidateDetail);
+        }
+    }
 
 }

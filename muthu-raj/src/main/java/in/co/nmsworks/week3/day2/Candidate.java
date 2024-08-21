@@ -18,7 +18,6 @@ public class Candidate {
     private AcceptedStatus status;
 
 
-
     public Candidate(int sno, long registerNo, String name, String dept, String collegeName, String department, String email, String status) {
         this.sno = sno;
         this.registerNo = registerNo;
@@ -30,6 +29,37 @@ public class Candidate {
         this.status = AcceptedStatus.valueOf(status);
     }
 
+    public int getSno() {
+        return sno;
+    }
+
+    public long getRegisterNo() {
+        return registerNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDept() {
+        return dept;
+    }
+
+    public String getCollegeName() {
+        return collegeName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public AcceptedStatus getStatus() {
+        return status;
+    }
 
     @Override
     public String toString() {
