@@ -107,7 +107,7 @@ public class Candidate {
                 ", acceptedOrNot = '" + acceptedStatus + '\'';
     }
 
-    public static void main(String[] args) throws IOException {
+    public List<Candidate> getCandidateList() throws IOException {
         FileReader reader = new FileReader("/home/nms/Downloads/Candidates.csv");
         BufferedReader bufferedReader = new BufferedReader(reader);
         List<Candidate> candidateList = new ArrayList<>();
@@ -132,8 +132,15 @@ public class Candidate {
         }
         bufferedReader.close();
         reader.close();
+
         for (int i = 0; i < candidateList.size(); i++) {
             System.out.println("Candidate "+(i+1)+" :"+"\n"+candidateList.get(i));
         }
+        return candidateList;
+    }
+
+    public static void main(String[] args) throws IOException {
+        Candidate candidate = new Candidate();
+        candidate.getCandidateList();
     }
 }
