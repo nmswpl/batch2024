@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Practice8 {
-    public void fileParsing() throws IOException {
+    public List<Candidate> fileParsing() throws IOException {
         FileReader fr =new FileReader("/home/nms/Candidates.csv");
         BufferedReader br=new BufferedReader(fr);
         String lines;
@@ -20,13 +20,9 @@ public class Practice8 {
             Candidate obj=new Candidate(candidateDetails);
             objects.add(obj);
         }
-        for (Candidate object : objects) {
-            System.out.println(object);
-
-        }
         br.close();
         fr.close();
-
+       return objects;
     }
 
 }
