@@ -14,8 +14,7 @@ public class Question8 {
 
         while ((line = bufferedReader.readLine()) != null){
             if(line.contains("old")){
-                line.replaceAll("old","new");
-                bufferedWriter.write(line);
+                bufferedWriter.write(line.replaceAll("old","new"));
                 bufferedWriter.newLine();
             }
 
