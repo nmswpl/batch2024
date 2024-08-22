@@ -2,9 +2,6 @@ package in.co.nmsworks.week3.day4;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-
-import static jdk.nashorn.internal.objects.NativeArray.forEach;
-
 public class Question10 {
     int key=0;
     int value =0;
