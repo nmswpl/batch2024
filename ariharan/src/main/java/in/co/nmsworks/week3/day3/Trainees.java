@@ -83,7 +83,6 @@ public class Trainees {
             ps.close();
             connection.close();
 
-
         }catch (SQLException e){
             throw new RuntimeException(e);
 
