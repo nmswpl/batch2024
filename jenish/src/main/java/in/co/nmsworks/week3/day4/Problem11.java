@@ -52,40 +52,40 @@ public class Problem11 {
             System.out.println(numberToWordMap.get(num));
         }
         else if(String.valueOf(num).length() == 3){
-            String lastDigit = String.valueOf(num % 10);
+            int lastDigit = num % 10;
             num = num / 10;
-            String secondDigit = (num % 10) + "0";
+            int secondDigit = (num % 10) * 10;
             num = num / 10;
-            String firstDigit = (num % 10) + "00";
+            int firstDigit = (num % 10) * 100;
 
             String result = "";
-            if(numberToWordMap.containsKey(Integer.valueOf(firstDigit))){
-                result += numberToWordMap.get(Integer.valueOf(firstDigit))+" "+"and ";
+            if(numberToWordMap.containsKey(firstDigit)){
+                result += numberToWordMap.get(firstDigit)+" "+"and ";
 
-                int key = Integer.parseInt(secondDigit) + Integer.parseInt(lastDigit);
+                int key = secondDigit + lastDigit;
                 if(numberToWordMap.containsKey(key)){
                     result += numberToWordMap.get(key);
                 }
-                else if(numberToWordMap.containsKey(Integer.valueOf(secondDigit))){
-                    result += numberToWordMap.get(Integer.valueOf(secondDigit))+" ";
+                else if(numberToWordMap.containsKey(secondDigit)){
+                    result += numberToWordMap.get(secondDigit)+" ";
 
-                    if(numberToWordMap.containsKey(Integer.parseInt(lastDigit))) {
-                        result += numberToWordMap.get(Integer.parseInt(lastDigit));
+                    if(numberToWordMap.containsKey(lastDigit)) {
+                        result += numberToWordMap.get(lastDigit);
                     }
                 }
             }
             System.out.println(result);
         }
         else if(String.valueOf(num).length() == 2){
-            String lastDigit = String.valueOf(num % 10);
+            int lastDigit = num % 10;
             num = num / 10;
-            String firstDigit = num % 10 + "0";
+            int firstDigit = num % 10 * 10;
 
             String result = "";
-            if(numberToWordMap.containsKey(Integer.valueOf(firstDigit))) {
-                result += numberToWordMap.get(Integer.valueOf(firstDigit))+" ";
-                if (numberToWordMap.containsKey(Integer.parseInt(lastDigit))) {
-                    result += numberToWordMap.get(Integer.parseInt(lastDigit));
+            if(numberToWordMap.containsKey(firstDigit)) {
+                result += numberToWordMap.get(firstDigit)+" ";
+                if (numberToWordMap.containsKey(lastDigit)) {
+                    result += numberToWordMap.get(lastDigit);
                 }
             }
             System.out.println(result);
