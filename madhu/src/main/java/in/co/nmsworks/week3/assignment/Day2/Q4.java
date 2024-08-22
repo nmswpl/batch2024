@@ -10,16 +10,17 @@ public class Q4 {
         BufferedReader buffer = new BufferedReader(fr);
         FileWriter fw = new FileWriter("/home/nms/Output.txt");
         BufferedWriter bw = new BufferedWriter(fw);
-        String str="";
-        str = buffer.readLine();
+        String str = buffer.readLine();
         while (str != null)
         {
             bw.write(str);
+            bw.newLine();
+            str = buffer.readLine();
         }
-        fr.close();
         buffer.close();
-        fw.close();
+        fr.close();
         bw.close();
+        fw.close();
     }
 }
 
