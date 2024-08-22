@@ -15,14 +15,12 @@ public class Program4 {
         FileWriter fw = new FileWriter("/home/nms/output.txt");
         BufferedWriter bufferedWriter = new BufferedWriter(fw);
 
-
-        String line=bufferedReader.readLine();
-
+        String line = bufferedReader.readLine();
 
         while((null != line)) {
             bufferedWriter.write(line);
             bufferedWriter.newLine();
-            line=bufferedReader.readLine();
+            line = bufferedReader.readLine();
         }
 
         bufferedWriter.close();

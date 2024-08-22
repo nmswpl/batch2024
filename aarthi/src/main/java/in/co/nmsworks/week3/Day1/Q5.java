@@ -35,9 +35,6 @@ public class Q5 {
         System.out.println(finalLists.size());
         return finalLists;
     }
-
-
-
     public static void main (String[]args){
             Q5 singleList = new Q5();
             singleList.nestedLists();
