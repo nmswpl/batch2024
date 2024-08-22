@@ -5,21 +5,17 @@ package in.co.nmsworks.week3.assessment.day4;
  */
 
 public class Problem5 {
-    public int getSecondLargest(int[] a){
-        int temp;
-        for (int i = 0; i < a.length; i++)
-        {
-            for (int j = i + 1; j < a.length; j++)
-            {
-                if (a[i] > a[j])
-                {
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
-                }
+    public void getSecondLargest(int... arr) {
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (int num : arr) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num < largest) {
+                secondLargest = num;
             }
-        }
-        return a[a.length-2];
+        }System.out.println("Second Largest: " + secondLargest);
     }
 
 
