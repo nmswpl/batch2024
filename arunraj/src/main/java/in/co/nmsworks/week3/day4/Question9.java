@@ -13,20 +13,16 @@ two integers using the Euclidean algorithm.
 public class Question9 {
     public static void main(String[] args) {
         Question9 q9 = new Question9();
-        q9.computeGCD(8,2);
+        System.out.println("The GCD is : "+q9.computeGCD(8,2));
 
     }
 
-    public void computeGCD(int a,int b){
-        int r;
-        while (a < 0){
-            if(a > b){
-                r = a % b;
-
-            }
-            else {
-                r = b % a;
-            }
+    public int computeGCD(int a,int b) {
+        if(b == 0){
+            return a;
+        }
+        else {
+            return computeGCD(b , a % b);
         }
     }
 }
