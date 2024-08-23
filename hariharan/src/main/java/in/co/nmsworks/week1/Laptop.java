@@ -1,5 +1,8 @@
 package in.co.nmsworks.week1;
 
+import java.util.Collections;
+import java.lang.Math;
+
 public class Laptop {
 
 
@@ -42,7 +45,5 @@ public class Laptop {
         else
             return "Basic works";
     }
-
-
 
 }

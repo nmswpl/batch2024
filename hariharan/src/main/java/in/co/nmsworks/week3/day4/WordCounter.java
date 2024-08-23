@@ -54,8 +54,6 @@ public class WordCounter {
                         wordCounter.put(word,1);
                     }
                 }
-
-
                 wordsList.clear();
             }
 

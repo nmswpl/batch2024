@@ -27,7 +27,7 @@ public class CandidateDbWriter {
             }
             System.out.println(i + " Rows Affected");
         }catch (SQLException e) {
-            throw new RuntimeException(e);
+          e.printStackTrace();
         }
     }
 }
