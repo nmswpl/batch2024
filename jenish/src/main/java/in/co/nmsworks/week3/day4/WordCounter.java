@@ -54,7 +54,10 @@ public class WordCounter {
                 }
                 line = bufferedReader.readLine();
             }
-            System.out.println(wordsToFrequency);
+//            System.out.println(wordsToFrequency);
+            for (String word : wordsToFrequency.keySet()) {
+                System.out.println(word+" occurs "+wordsToFrequency.get(word)+" times.");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
