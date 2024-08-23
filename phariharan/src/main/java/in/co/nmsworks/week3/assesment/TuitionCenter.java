@@ -2,7 +2,6 @@ package in.co.nmsworks.week3.assesment;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class TuitionCenter {
     private String branchName;
@@ -38,19 +37,6 @@ public class TuitionCenter {
     public TuitionCenter(String branchName, String branchCode) {
         this.branchName = branchName;
         this.branchCode = branchCode;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TuitionCenter that = (TuitionCenter) o;
-        return Objects.equals(branchName, that.branchName) && Objects.equals(branchCode, that.branchCode) && Objects.equals(noOfStudentPerSubjects, that.noOfStudentPerSubjects);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(branchName, branchCode, noOfStudentPerSubjects);
     }
 
     @Override
