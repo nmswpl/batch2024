@@ -1,6 +1,4 @@
 package in.co.nmsworks.week3.day5;
-import in.co.nmsworks.week3.day2.Candidates;
-import in.co.nmsworks.week3.day2.getCandidateDetails;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.sql.*;
@@ -11,21 +9,18 @@ public class CreateCandidateDetails {
     public static void main(String[] args) {
 
         CreateCandidateDetails createCandidateDetails = new CreateCandidateDetails();
-        List<trainee> traineeList = createCandidateDetails.getTraineeDetails();
-         createCandidateDetails.writeTraineeDetails(traineeList);
-
-
-
+        List<Trainees> traineesList = createCandidateDetails.getTraineeDetails();
+         createCandidateDetails.writeTraineeDetails(traineesList);
     }
 
-    public List<trainee> getTraineeDetails(){
-        List<trainee> trainees = new ArrayList<>();
+    public List<Trainees> getTraineeDetails(){
+        List<Trainees> trainees = new ArrayList<>();
         try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training","nms","")){
 
             PreparedStatement preparedStatement = connection.prepareStatement("select * from trainees");
             ResultSet resultSet = preparedStatement.executeQuery();
            while(resultSet.next()){
-               trainees.add(new trainee(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3)));
+               trainees.add(new Trainees(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3)));
            }
 
 
@@ -37,18 +32,18 @@ public class CreateCandidateDetails {
 
     }
 
-    public  void writeTraineeDetails(List<trainee> traineeList){
-        try(FileWriter fileWriter = new FileWriter("trainee.txt",true);
+    public  void writeTraineeDetails(List<Trainees> traineesList){
+        try(FileWriter fileWriter = new FileWriter("Trainees.txt",true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
 
-            for (trainee trainee : traineeList) {
-                bufferedWriter.append("*****************"+ trainee.getId()+". Row "+"**********************");
+            for (Trainees Trainees : traineesList) {
+                bufferedWriter.append("*****************"+ Trainees.getId()+". Row "+"**********************");
                 bufferedWriter.newLine();
-                bufferedWriter.append("id: " + trainee.getId());
+                bufferedWriter.append("id: " + Trainees.getId());
                 bufferedWriter.newLine();
-                bufferedWriter.append("Name " + trainee.getName());
+                bufferedWriter.append("Name " + Trainees.getName());
                 bufferedWriter.newLine();
-                bufferedWriter.append("Email:" +trainee.getEmailid());
+                bufferedWriter.append("Email:" + Trainees.getEmailid());
                 bufferedWriter.newLine();
             }
 

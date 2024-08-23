@@ -1,6 +1,6 @@
 package in.co.nmsworks.week3.day5;
 
-public class trainee
+public class Trainees
 {
     private int id;
     private String name;
@@ -27,7 +27,7 @@ public class trainee
         return emailid;
     }
 
-    public trainee(int id, String name, String emailid) {
+    public Trainees(int id, String name, String emailid) {
         this.id = id;
         this.name = name;
         this.emailid = emailid;
@@ -39,7 +39,7 @@ public class trainee
 
     @Override
     public String toString() {
-        return "trainee{" +
+        return "Trainees{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", emailid='" + emailid + '\'' +
