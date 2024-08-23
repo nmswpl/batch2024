@@ -62,19 +62,18 @@ public class Multiplex {
     }
     public Multiplex(){
         for (int i = 1; i <=50 ; i++) {
-            screen1Tickets.add("ceat"+i);
+            screen1Tickets.add("seat"+i);
         }
         for (int i = 1; i <=75 ; i++) {
-            screen2Tickets.add("ceat"+i);
+            screen2Tickets.add("seat"+i);
         }
         for (int i = 1; i <=40 ; i++) {
-            screen3Tickets.add("ceat"+i);
+            screen3Tickets.add("seat"+i);
         }
     }
     public void bookTickets(String screenName,int ticket){
         if(screenName.equalsIgnoreCase("screen1")){
-            if (ticket<=checkTicketScreen1()){
-                System.out.println(checkTicketScreen1());
+            if (ticket<=screen1Tickets.size()){
                 System.out.println("yours seats are::");
                 for (int i = 0; i <ticket ; i++) {
                     System.out.println(screen1Tickets.get(0));
@@ -88,7 +87,7 @@ public class Multiplex {
 
 
         } else if (screenName.equalsIgnoreCase("screen2")) {
-            if (ticket<=checkTicketScreen2()){
+            if (ticket<=screen2Tickets.size()){
                 System.out.println("yours seats are::");
                 for (int i = 0; i <ticket ; i++) {
                     System.out.println(screen2Tickets.get(0));
@@ -100,7 +99,7 @@ public class Multiplex {
             }
 
         } else if (screenName.equalsIgnoreCase("screen3")) {
-            if (ticket<=checkTicketScreen3()){
+            if (ticket<=screen3Tickets.size()){
                 System.out.println("your tickets are::");
                 for (int i = 0; i <ticket ; i++) {
                     System.out.println(screen3Tickets.get(0));
@@ -115,20 +114,11 @@ public class Multiplex {
     }
     public void showAvailability(String screen){
         if (screen.equalsIgnoreCase("screen1"))
-            System.out.println("In screen1 ,the available tickets is::"+checkTicketScreen1());
+            System.out.println("In screen1 ,the available tickets is::"+screen1Tickets.size());
         else if (screen.equalsIgnoreCase("screen2"))
-            System.out.println("In screen2 ,the available tickets is::"+checkTicketScreen2());
+            System.out.println("In screen2 ,the available tickets is::"+screen2Tickets.size());
         else if (screen.equalsIgnoreCase("screen3"))
-            System.out.println("In screen3 ,the available tickets is::"+checkTicketScreen3());
-    }
-    private int checkTicketScreen1(){
-        return screen1Tickets.size();
-    }
-    private int checkTicketScreen2(){
-        return screen2Tickets.size();
-    }
-    private int checkTicketScreen3(){
-       return screen3Tickets.size();
+            System.out.println("In screen3 ,the available tickets is::"+screen3Tickets.size());
     }
 }
 
