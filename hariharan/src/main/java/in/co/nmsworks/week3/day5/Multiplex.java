@@ -11,6 +11,8 @@ public class Multiplex {
     int seatBookedForScree2 =0;
     int seatBookedForScree3 =0;
     Map<Integer,Integer> screenToTicket = new HashMap<>();
+
+
     public static void main(String[] args)
     {
 
