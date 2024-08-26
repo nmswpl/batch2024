@@ -134,10 +134,30 @@ public class PractiseQuestions {
         String line = "To remove the space in this line";
         String[] array = line.split(" ");
         for (int i = 0; i < array.length; i++) {
-            System.out.print("Space removed string : " + array[i]);
+            System.out.println("Space removed string : " + array[i]);
         }
     }
 
+    public void findLongestSubstring(String str){
+        String temp = "";
+        String longestSubString = "";
+
+        for (int i = 0; i < str.length() ; i++) {
+            if(temp.indexOf(str.charAt(i)) == -1){
+                temp += str.charAt(i);
+            }
+            else{
+                if(temp.length() > longestSubString.length()){
+                    longestSubString = temp;
+                }
+                temp = temp.substring(temp.indexOf(str.charAt(i)) + 1) + str.charAt(i);
+            }
+        }
+        if(temp.length() > longestSubString.length()){
+            longestSubString = temp;
+        }
+        System.out.println("Longest Substring :: "+longestSubString);
+    }
 
     public void databaseConnectivity() {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms", "");
@@ -183,7 +203,26 @@ public class PractiseQuestions {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    public void handleFiles(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the file path");
+        String path = scanner.next();
+
+        try(FileReader fr = new FileReader(path);
+        BufferedReader br = new BufferedReader(fr))
+        {
+            String line = br.readLine();
+            while (line != null){
+                line = br.readLine();
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void main(String[] args) {
@@ -194,10 +233,12 @@ public class PractiseQuestions {
         pq.sumOfIntegers();
         pq.reverseString("Number");
         pq.removeSpace();
+        pq.findLongestSubstring("Longest substring in this line");
         pq.databaseConnectivity();
         pq.execute();
         pq.readFile();
         pq.listOfNames();
         pq.mergeArrayList();
+        pq.handleFiles();
     }
 }

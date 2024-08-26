@@ -1,11 +1,5 @@
 package in.co.nmsworks.week3.practise;
-/*
-//
 
-**Question-7:** Design and implement a class that manages a collection of `Student` objects where each student
-has a unique ID and a name. The class should support efficient searching, insertion, and deletion by student ID.
-**Challenge:** Choose the appropriate data structure for efficient operations.
- */
 
 import java.util.*;
 
@@ -51,6 +45,7 @@ the remaining numbers sorted in ascending order.
         vehicles.add("Auto");
         vehicles.add("Bus");
         vehicles.addAll(colors);
+        vehicles.retainAll(colors);
 
         System.out.println(vehicles);
     }
@@ -120,7 +115,7 @@ The method should modify the original list in place.
         Map<String, Integer> nameANdItsOccurrences = new HashMap<>();
         for (String str : names) {
 
-            nameANdItsOccurrences.put(str, nameANdItsOccurrences.getOrDefault(str, 0) + 1);
+            nameANdItsOccurrences.put(str, nameANdItsOccurrences.get(str) + 1);
         }
         System.out.println(nameANdItsOccurrences);
 
