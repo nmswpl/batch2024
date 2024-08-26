@@ -8,6 +8,7 @@ repositories {
 dependencies {
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
+    implementation group: 'com.opencsv', name: 'opencsv', version: '5.9'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 buildscript {
@@ -17,6 +18,8 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // https://mvnrepository.com/artifact/com.opencsv/opencsv
+
     }
 }
 kotlin {

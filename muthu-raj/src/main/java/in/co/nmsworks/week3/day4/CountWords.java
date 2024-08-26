@@ -8,9 +8,9 @@ import java.util.Map;
 
 public class CountWords {
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
         String url = "/home/nms/countWords2.txt";
-        String word = "country";
+        String word = "India";
         wordCount(url, word);
         eachWordCount(url);
     }
@@ -51,7 +51,7 @@ public class CountWords {
                             allWordCounter.put(word, 1);
                         } else {
                             int count = allWordCounter.get(word);
-                            allWordCounter.replace(word, count, count + 1);
+                            allWordCounter.put(word, ++count);
                         }
                     }
                 }
