@@ -7,4 +7,6 @@ repositories {
 dependencies {
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
+    implementation 'com.opencsv:opencsv:5.6'
+
 }

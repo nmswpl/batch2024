@@ -37,19 +37,7 @@ public class Candidate{
         return registerNo;
     }
 
-    @Override
-    public String toString() {
-        return "Candidate{" +
-                "sno=" + sno +
-                ", registerNo=" + registerNo +
-                ", name='" + name + '\'' +
-                ", dept='" + dept + '\'' +
-                ", collegeName='" + collegeName + '\'' +
-                ", department='" + department + '\'' +
-                ", email='" + email + '\'' +
-                ", acceptedStatus='" + acceptedStatus + '\'' +
-                '}';
-    }
+
 
     public void setRegisterNo(int registerNo) {
         this.registerNo = registerNo;
@@ -101,6 +89,19 @@ public class Candidate{
 
     public void setAcceptedStatus(String acceptedStatus) {
         this.acceptedStatus = acceptedStatus;
+    }
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "sno=" + sno +
+                ", registerNo=" + registerNo +
+                ", name='" + name + '\'' +
+                ", dept='" + dept + '\'' +
+                ", collegeName='" + collegeName + '\'' +
+                ", department='" + department + '\'' +
+                ", email='" + email + '\'' +
+                ", acceptedStatus='" + acceptedStatus + '\'' +
+                '}';
     }
 
 }
