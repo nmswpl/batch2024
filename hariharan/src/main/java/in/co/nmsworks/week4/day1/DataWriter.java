@@ -1,24 +1,34 @@
 package in.co.nmsworks.week4.day1;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.nio.Buffer;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class DataWriter {
-    public static void main(String[] args) {
+    public static <List> void main(String[] args) {
          try(FileReader fileReader = new FileReader("/home/nms/Downloads/Sample_CSV_Data.csv");
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
              bufferedReader.readLine(); // skip the header;
              String line;
+
+
              while((line = bufferedReader.readLine()) != null){
                  String[] details = line.split(",");
-                 WrieToDb wrieToDb = new WrieToDb();
-                 if(Integer.parseInt(details[2]) % 2 == 0){
-                     wrieToDb.saveToDb(details);
+                 Writer dbwriter = new DbWriter();
+                 Writer filewriter = new WriteToFile();
+
+                 if(Integer.parseInt(details[2]) % 2 ==0){
+                     dbwriter.open();
+                     dbwriter.write(details);
+                     dbwriter.close();
                  }else{
-                     wrieToDb.saveToFile(details);
+                     filewriter.open();
+                     filewriter.write(details);
+                     filewriter.close();
                  }
+
              }
 
          }catch (Exception e){
