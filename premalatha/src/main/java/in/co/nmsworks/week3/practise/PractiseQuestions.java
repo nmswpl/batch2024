@@ -191,6 +191,7 @@ public class PractiseQuestions {
         PractiseQuestions pq = new PractiseQuestions();
         pq.positiveOrNegativeOrZero(-5);
         pq.fibonacciNumber();
+        pq.sumOfIntegers();
         pq.reverseString("Number");
         pq.removeSpace();
         pq.databaseConnectivity();
