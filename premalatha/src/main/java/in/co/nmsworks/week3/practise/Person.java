@@ -29,18 +29,18 @@ public class Person {
     }
 
     public Person(String name, int age) {
-        //  this name = name;
-        //this age = age;
+        this.name = name;
+        this.age = age;
     }
 
     public static void main(String[] args) {
 
 
-        // List<Person> people = Array.asList(
-        new Person("Prema", 21);
-        new Person("Jeni", 20);
-        new Person("Raji", 22);
-        new Person("Nasi", 21);
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Prema", 21));
+        people.add(new Person("Jeni", 20));
+        people.add(new Person("Raji", 22));
+        people.add(new Person("Nasi", 21));
     }
 }
 
