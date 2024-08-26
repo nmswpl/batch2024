@@ -7,7 +7,10 @@ public class Student {
     private int mathsMark;
     private int englishMark;
     private int scienceMark;
-    private int history;
+    private int historyMark;
+
+    public Student() {
+    }
 
     public Student(int id, String name, int mathsMark, int englishMark, int scienceMark, int history) {
         this.id = id;
@@ -15,7 +18,15 @@ public class Student {
         this.mathsMark = mathsMark;
         this.englishMark = englishMark;
         this.scienceMark = scienceMark;
-        this.history = history;
+        this.historyMark = history;
+    }
+
+    public Student(String name, int mathsMark, int englishMark, int scienceMark, int history) {
+        this.name = name;
+        this.mathsMark = mathsMark;
+        this.englishMark = englishMark;
+        this.scienceMark = scienceMark;
+        this.historyMark = history;
     }
 
     public  int getId() {
@@ -58,12 +69,12 @@ public class Student {
         this.scienceMark = scienceMark;
     }
 
-    public int getHistory() {
-        return history;
+    public int getHistoryMark() {
+        return historyMark;
     }
 
-    public void setHistory(int history) {
-        this.history = history;
+    public void setHistoryMark(int history) {
+        this.historyMark = history;
     }
 
     @Override
@@ -74,7 +85,7 @@ public class Student {
                 ", mathsMark=" + mathsMark +
                 ", englishMark=" + englishMark +
                 ", scienceMark=" + scienceMark +
-                ", history=" + history +
+                ", historyMark=" + historyMark +
                 '}';
     }
 }
