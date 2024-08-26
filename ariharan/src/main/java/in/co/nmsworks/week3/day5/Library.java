@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class Library {
     public static void main(String[] args){
-       new Library().fileParsing();
-        new Library().returnBook("ariha");
+       //new Library().fileParsing();
+        new Library().deletebook("ariha");
     }
     public void fileParsing(){
         try (FileReader fr=new FileReader("/home/nms/Library.csv");
