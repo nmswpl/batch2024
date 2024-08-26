@@ -44,6 +44,7 @@ public class LibraryFunction {
                             l.addBook();
                         } else if (value == 3) {
                             System.out.println("enter the book name to delete::");
+                            scanner.nextLine();
                             String bookname = scanner.nextLine();
                             l.deletebook(bookname);
                         } else {
@@ -57,16 +58,19 @@ public class LibraryFunction {
                                     break;
                                 case 2:
                                     System.out.println("enter the name to search::");
+                                    scanner.nextLine();
                                     String name = scanner.nextLine();
                                     l.searchBookbyName(name);
                                     break;
                                 case 3:
                                     System.out.println("enter the author to search::");
+                                    scanner.nextLine();
                                     String author = scanner.nextLine();
                                     l.searchBookbyAuthor(author);
                                     break;
                                 case 4:
                                     System.out.println("enter the category to search::");
+                                    scanner.nextLine();
                                     String category = scanner.nextLine();
                                     l.searchBookbyCategory(category);
                                     break;
@@ -75,31 +79,36 @@ public class LibraryFunction {
                             }
 
                         }
+                        break;
 
                     case 2:
                         System.out.print("\n\nChoose operation \n\t 1. rent a book\n\t 2. return a book\n\t 3. check Availability\nEnter Choice (1/2/3) :: ");
                         int val = scanner.nextInt();
                         if (val < 1 || val > 3) {
-                            System.out.println("Invalid screen number.");
+                            System.out.println("Invalid  number.");
                             break;
                         }
                         switch (val) {
                             case 1:
                                 System.out.println("enter the book name::");
+                                scanner.nextLine();
                                 String name = scanner.nextLine();
                                 l.rentBook(name);
                                 break;
                             case 2:
                                 System.out.println("enter the book name::");
+                                scanner.nextLine();
                                 String bname = scanner.nextLine();
                                 l.returnBook(bname);
                                 break;
                             case 3:
                                 System.out.println("enter the book name::");
+                                scanner.nextLine();
                                 String bookname = scanner.nextLine();
                                 l.checkAvailability(bookname);
                                 break;
                         }
+                        break;
 
 
                     case 3:

@@ -1,7 +1,6 @@
 package in.co.nmsworks.week3.day5.homework;
 
 public class StudentDetails {
-    //    Create a POJO class for Student with attributes `name`, `age`, and `grade`.
     private String name;
     private int id;
 

@@ -8,10 +8,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Library {
-    public static void main(String[] args){
-       //new Library().fileParsing();
-        new Library().deletebook("ariha");
-    }
     public void fileParsing(){
         try (FileReader fr=new FileReader("/home/nms/Library.csv");
              BufferedReader br=new BufferedReader(fr);
@@ -39,7 +35,7 @@ public class Library {
     }
     public void addBook(){
         try ( Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/training");
-              PreparedStatement ps =con.prepareStatement("insert into library values(?,?,?,?,?)")){
+              PreparedStatement ps =con.prepareStatement("insert into library values(?,?,?,?,?,'1')")){
             Scanner sc=new Scanner(System.in);
             System.out.println("enter the author of the book::");
             String authorname=sc.nextLine();
@@ -82,7 +78,7 @@ public class Library {
               if (flag==0){
                   System.out.println("the book is not found in the library");
               }
-
+             rs.close();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -103,6 +99,7 @@ public class Library {
                     flag = 1;
                 }
             }
+            rs.close();
             if (flag == 0) {
                 System.out.println("the book is not found in the library");
             }
@@ -127,6 +124,7 @@ public class Library {
                     flag = 1;
                 }
             }
+            rs.close();
             if (flag == 0) {
                 System.out.println("the book is not found in the library");
             }
@@ -151,6 +149,7 @@ public class Library {
                     flag = 1;
                 }
             }
+            rs.close();
             if (flag == 0) {
                 System.out.println("the book is not found in the library");
             }
@@ -205,11 +204,16 @@ public class Library {
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training");
              PreparedStatement ps = con.prepareStatement("select * from library")) {
             ResultSet rs = ps.executeQuery();
+            int flag=0;
             while (rs.next()){
                 if ((rs.getString(2).equals(bookName)) && (rs.getInt(6) == 1)) {
                     System.out.println(bookName+" is available in the library");
+                    flag=1;
                 }
             }
+            if (flag==0)
+                System.out.println("book is not available now");
+            rs.close();
         }catch (Exception e){
             e.printStackTrace();
         }

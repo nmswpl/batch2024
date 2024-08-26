@@ -6,7 +6,7 @@ public class CollectionsPracticeQns {
     public static void main(String[] args) {
 
         // new CollectionsPracticeQns().setIntersection(new HashSet<>(Arrays.asList("my","name","is","ari")),new HashSet<>(Arrays.asList("my","name","is","ari")));
-        new CollectionsPracticeQns().listOfList();
+        new CollectionsPracticeQns().reverseElements();
     }
     public List listOfOddNumbers(List<Integer> listOfIntegers){
 //        *Question-1:** Write a method that takes a `List<Integer>` and returns a new list with the even numbers removed and the remaining numbers sorted in ascending order.

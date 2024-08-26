@@ -5,7 +5,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import java.util.*;
 
 public class PracticeQns {
@@ -41,7 +41,7 @@ public class PracticeQns {
 
     Scanner sc=new Scanner(System.in);
     public static void main(String[] args) {
-        new PracticeQns().longestString();
+        new PracticeQns().databasePractice();
 //        Student ari=new Student();
 //        ari.setName("Ariharan");
 //        ari.setAge(21);
@@ -199,6 +199,67 @@ public class PracticeQns {
         }catch (FileNotFoundException e){
             System.err.println("File not found");
         }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+//    11. Write a program that performs the following operations:
+//            - Connects to a database.
+//            - Uses a `PreparedStatement` to insert a new record.
+//     - Uses a `PreparedStatement` to update an existing record.
+//     - Uses `executeQuery` to retrieve and print data from the table.
+
+    public void databasePractice(){
+        try (Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/training")){
+            int val;
+            do {
+
+                System.out.print("\n\nChoose operation \n\t 1. insert a person\n\t 2. update a person \n\t 3. show all students\n\t4.quit\nEnter Choice (1/2/3) :: ");
+                val = sc.nextInt();
+
+                if (val < 1 || val > 3) {
+                    System.out.println("Invalid  number.");
+                }
+                switch (val) {
+                    case 1:
+                        PreparedStatement ps = con.prepareStatement("insert into person values(?,?)");
+                        System.out.println("enter the name of the person::");
+                        sc.nextLine();
+                        String name = sc.nextLine();
+                        System.out.println("enter the id of the person::");
+                        int id = sc.nextInt();
+                        ps.setString(2, name);
+                        ps.setInt(1, id);
+                        ps.execute();
+                        ps.close();
+                        System.out.println("successfully inserted");
+                        break;
+                    case 2:
+                        PreparedStatement preparedStatement = con.prepareStatement("update person set id=? where name=?");
+                        System.out.println("enter the name of the person to update the id::");
+                        String personName = sc.next();
+                        System.out.println("enter the new  id of the person::");
+                        int personid = sc.nextInt();
+                        preparedStatement.setString(2, personName);
+                        preparedStatement.setInt(1, personid);
+                        preparedStatement.execute();
+                        System.out.println("successfully id updated");
+                        preparedStatement.close();
+                        break;
+                    case 3:
+                        Statement stmt=con.createStatement();
+                        ResultSet rs=stmt.executeQuery("select*from person");
+                        while(rs.next()){
+                            System.out.println();
+                            System.out.println("id of the person::"+rs.getInt(1));
+                            System.out.print("\tname  of the person::"+rs.getString(2));
+                        }
+                        rs.close();
+                        stmt.close();
+                        break;
+                }
+            }while(val!=4);
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
