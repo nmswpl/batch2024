@@ -20,7 +20,7 @@ public class Library {
     private void fillTablesWithBooks() {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training");
              PreparedStatement ps = connection.prepareStatement("Insert into Library values (?,?,?,?,?,?)");
-             FileReader fr = new FileReader("D:\\OfficeWork\\phariharan\\src\\main\\java\\in\\co\\nmsworks\\week3\\day5\\Library.csv");
+             FileReader fr = new FileReader("/home/nms/Downloads/Library.csv");
              BufferedReader bufferedReader = new BufferedReader(fr)) {
             String string = bufferedReader.readLine();
             List<Candidate> candidatesList = new ArrayList<>();

@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class LibraryManagement {
 
     static Scanner sc = new Scanner(System.in);
-    static Connection connection;
-    static Statement statement = null;
+    private static final Connection connection;
+    private static Statement statement = null;
 
     static {
         try {
@@ -191,7 +191,7 @@ public class LibraryManagement {
                 System.out.println("No book records found !!!");
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
@@ -208,13 +208,13 @@ public class LibraryManagement {
                         System.out.println("Book not available or not  found");
                     }
                 } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
             } else {
                 System.out.println("Book not found. Try again.");
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
     }
