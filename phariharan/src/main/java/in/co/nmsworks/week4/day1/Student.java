@@ -3,18 +3,18 @@ package in.co.nmsworks.week4.day1;
 public class Student {
     private Integer id;
     private String name;
-    private Integer maths;
-    private Integer english;
-    private Integer science;
-    private Integer history;
+    private Integer mathMark;
+    private Integer englishMark;
+    private Integer scienceMark;
+    private Integer historyMark;
 
-    public Student(Integer id, String name, Integer maths, Integer english, Integer science, Integer history) {
+    public Student(Integer id, String name, Integer mathMark, Integer englishMark, Integer scienceMark, Integer historyMark) {
         this.id = id;
         this.name = name;
-        this.maths = maths;
-        this.english = english;
-        this.science = science;
-        this.history = history;
+        this.mathMark = mathMark;
+        this.englishMark = englishMark;
+        this.scienceMark = scienceMark;
+        this.historyMark = historyMark;
     }
 
     public Integer getId() {
@@ -33,35 +33,35 @@ public class Student {
         this.name = name;
     }
 
-    public Integer getMaths() {
-        return maths;
+    public Integer getMathMark() {
+        return mathMark;
     }
 
-    public void setMaths(Integer maths) {
-        this.maths = maths;
+    public void setMathMark(Integer mathMark) {
+        this.mathMark = mathMark;
     }
 
-    public Integer getEnglish() {
-        return english;
+    public Integer getEnglishMark() {
+        return englishMark;
     }
 
-    public void setEnglish(Integer english) {
-        this.english = english;
+    public void setEnglishMark(Integer englishMark) {
+        this.englishMark = englishMark;
     }
 
-    public Integer getScience() {
-        return science;
+    public Integer getScienceMark() {
+        return scienceMark;
     }
 
-    public void setScience(Integer science) {
-        this.science = science;
+    public void setScienceMark(Integer scienceMark) {
+        this.scienceMark = scienceMark;
     }
 
-    public Integer getHistory() {
-        return history;
+    public Integer getHistoryMark() {
+        return historyMark;
     }
 
-    public void setHistory(Integer history) {
-        this.history = history;
+    public void setHistoryMark(Integer historyMark) {
+        this.historyMark = historyMark;
     }
 }
