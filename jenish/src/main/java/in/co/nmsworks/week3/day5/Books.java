@@ -14,7 +14,7 @@ public class Books {
     private String author;
     private String category;
     private String releaseYear;
-    private boolean status;
+    private boolean isAvailable;
 
     public Books() {
     }
@@ -25,7 +25,7 @@ public class Books {
         this.author = author;
         this.category = category;
         this.releaseYear = releaseYear;
-        this.status = status;
+        this.isAvailable = status;
     }
 
     public long getISBN() {
@@ -54,7 +54,7 @@ public class Books {
 
 
     public boolean isStatus() {
-        return status;
+        return isAvailable;
     }
 
     @Override
@@ -147,6 +147,7 @@ public class Books {
                     System.out.println("Book currently unavailable");
                 }
             }
+            rs.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -171,7 +172,7 @@ public class Books {
                     System.out.println("Book currently unavailable");
                 }
             }
-
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -195,7 +196,7 @@ public class Books {
                     System.out.println("Specified author books are unavailable.");
                 }
             }
-
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -222,7 +223,7 @@ public class Books {
                     System.out.println("No Books found under this category.");
                 }
             }
-
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -264,7 +265,7 @@ public class Books {
                     System.out.println("Book currently unavailable, comeback after some time");
                 }
             }
-
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -286,7 +287,7 @@ public class Books {
                     System.out.println("Book is already available...");
                 }
             }
-
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -303,7 +304,7 @@ public class Books {
                     return true;
                 }
             }
-
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

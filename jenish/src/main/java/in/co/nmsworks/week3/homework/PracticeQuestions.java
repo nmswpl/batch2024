@@ -7,7 +7,7 @@ import java.util.*;
 public class PracticeQuestions {
     public void positiveOrNegative(int num){
         if(num == 0){
-            System.out.println(num+" is neutral");
+            System.out.println(num+" is zero");
         }
         else if(num < 0){
             System.out.println(num+" is negative number");
@@ -33,13 +33,12 @@ public class PracticeQuestions {
     public void sumOfNumbers(){
         int sum = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number: ");
-        int num = sc.nextInt();
-        while(num != 0){
-            sum += num;
+        int num = 0;
+       do {
             System.out.println("Enter a number: ");
             num = sc.nextInt();
-        }
+            sum += num;
+        } while(num != 0);
         System.out.println("Sum of all numbers: "+sum);
     }
 
