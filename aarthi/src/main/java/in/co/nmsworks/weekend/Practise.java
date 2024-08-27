@@ -1,9 +1,12 @@
 package in.co.nmsworks.weekend;
 
-import java.sql.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
-import static sun.text.normalizer.UCharacter.getAge;
+
 /*
 Question-1:** Write a method that takes a `List<Integer>` and
 returns a new list with the even numbers removed and
@@ -182,6 +185,109 @@ public class Practise {
         System.out.println(setOfName);
         System.out.println(nameLengthMap);
     }
+    /*
+    6. Write a program that reverses a given string without using built-in reverse methods.
+     */
+
+    public void  reverseString(String str) {
+        String reversedStr = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversedStr += str.charAt(i);
+        }
+        System.out.println(str);
+        System.out.println(reversedStr);
+
+    }
+    /*
+    8. Write a program to find the longest substring without repeating characters.
+     */
+
+    public void longestSubstring(String s) {
+
+        Set<Character> charSet = new HashSet<>();
+        int left = 0;
+        int maxLength = 0;
+        int start = 0;
+        for (int right = 0; right < s.length(); right++) {
+            char currentChar = s.charAt(right);
+            while (charSet.contains(currentChar)) {
+                charSet.remove(s.charAt(left));
+                left++;
+            }
+            charSet.add(currentChar);
+            if (right - left + 1 > maxLength) {
+                maxLength = right - left + 1;
+                start = left;
+            }
+        }
+        System.out.println(s.substring(start, start + maxLength));
+    }
+    /*
+    12. Write a program that reads a file using `FileReader`
+    and wraps it with `BufferedReader` to efficiently read the content.
+    Count and print the number of lines in the file.
+     */
+    public void countAndPrintLine(){
+        try {
+            FileReader fr = new FileReader("/home/nms/Downloads/input.txt");
+            BufferedReader br = new BufferedReader(fr);
+            String line = br.readLine();
+            int count = 0;
+            while (line != null){
+                line = br.readLine();
+                System.out.println(line);
+                count++;
+            }
+            System.out.println("Number of lines : " +count);
+            br.close();
+            fr.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    /*
+     **Question-6:** Write a method that takes a `List<String>` and
+     * returns a `Map<String, Integer>` where each key is a unique string from the list
+     * and the corresponding value is the number of occurrences of that string.
+     **Challenge:** Optimize the solution for performance.
+     * */
+    public void occurrencesOfStr(List<String> stringList) {
+        Map<String, Integer> countMap = new HashMap<>();
+        for (String s : stringList) {
+            countMap.put(s, countMap.getOrDefault(s, 0) + 1);
+        }
+        System.out.println(countMap);
+    }
+    /*
+    **Question-7:** Design and implement a class that manages a collection of `Student` objects
+    * where each student has a unique ID and a name.
+    * The class should support efficient searching, insertion, and deletion by student ID.
+    **Challenge:** Choose the appropriate data structure for efficient operations.
+    */
+
+    /*
+    **Question-8:** Write a method that processes a `Map<String, String>` and
+    * returns a new map where all null values are replaced with the string "Unknown".
+    **Challenge:** Ensure that the original map is not modified during processing.
+    */
+    public void replaceNullToUnknown(Map<String,String>stringMap){
+        Map<String,String> newMap = new HashMap<>();
+        for(Map.Entry<String,String> entry : stringMap.entrySet()){
+            String key = entry.getKey();
+            String value = entry.getValue();
+            if(value == null){
+                newMap.put(key, "Unknown");
+            } else {
+                newMap.put(key, value);
+            }
+        }
+    }
+
+
+
+
 
     public static void main(String[] args) {
         Practise p = new Practise();
@@ -221,6 +327,23 @@ public class Practise {
 
         p.listToSetToMap(new ArrayList<>(Arrays.asList("aarthi","madhu","pavi","priya","aarthi","pavi","madhu")));
         System.out.println();
+
+        Student student = new Student("Aarthi",21,'A');
+        student.studentDetails();
+
+        p.reverseString("hello! world");
+        System.out.println();
+
+        p.longestSubstring("abcabfcd");
+        System.out.println();
+
+        p.occurrencesOfStr(new ArrayList<>(Arrays.asList("apple","orange","mango","plum","apple","orange","apple")));
+        System.out.println();
+
+        p.countAndPrintLine();
+        System.out.println();
+
+
 
 
     }

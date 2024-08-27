@@ -17,7 +17,6 @@ public class Student {
     }
 
     public int getAge() {
-        this.age = age;
         return age;
     }
 
@@ -42,4 +41,4 @@ public class Student {
         System.out.println("********************************************");
     }
 }
-}
+
