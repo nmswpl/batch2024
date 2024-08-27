@@ -12,7 +12,15 @@ public class Student {
     public Student(){
     }
 
-    public Student(int id, String name, int mathsMark, int englishMark, int scienceMark, int historyMark){
+    public Student( String name, int mathsMark, int englishMark, int scienceMark, int historyMark){
+        this.name = name;
+        this.mathsMark = mathsMark;
+        this.englishMark = englishMark;
+        this.scienceMark = scienceMark;
+        this.historyMark = historyMark;
+    }
+
+    public Student(int id, String name, int mathsMark, int englishMark, int scienceMark, int historyMark) {
         this.id = id;
         this.name = name;
         this.mathsMark = mathsMark;

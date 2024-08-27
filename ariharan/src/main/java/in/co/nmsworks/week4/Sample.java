@@ -1,7 +1,4 @@
 package in.co.nmsworks.week4;
-
-import in.co.nmsworks.week2.practice.employee.VP;
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -12,7 +9,10 @@ public class Sample {
     }
     public static void main(String[] args){
         String str="dddhjdjd jj";
-        str.split("d");
+        char[] arr=str.toCharArray();
+        for (char c : arr) {
+
+        }
 //        System.out.println(a==10?"equal":"not equal");
 //        String res=8==9?"equals":"not equals";
 //        System.out.println(res);
