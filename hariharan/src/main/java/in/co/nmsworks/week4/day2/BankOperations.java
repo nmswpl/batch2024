@@ -103,10 +103,11 @@ public class BankOperations
         int amount = sc.nextInt();
         if(userDetails.get(accountNumberToBeChecked).getUserName().equalsIgnoreCase(userName) && checkBalance(accountNumberToBeChecked,userName) >= amount){
             System.out.println(amount+ " is withdrawed");
-            statementList.add(dtf.format(now) + "+"+amount);
+            statementList.add(dtf.format(now) + " - "+amount );
 
 
             User modifiedUser = new User(accountNumberToBeChecked,userName, userDetails.get(accountNumberToBeChecked).getBalance()-amount, statementList);
+            statementList.clear();
             userDetails.put(accountNumberToBeChecked, modifiedUser);
 
 

@@ -24,15 +24,19 @@ public class StudentDBWriter
     }
     public static void main(String[] args) throws SQLException {
         StudentDBWriter studentDBWriter = new StudentDBWriter();
-        // studentDBWriter.addStudent(51,"Hariharan",96,97,93,92);
-        // studentDBWriter.updateScore("Kumar",96,95,93,88);
-        // studentDBWriter.removeStudent("english", 80);
-        //studentDBWriter.findMaimumScore("math");
-        //System.out.println(studentDBWriter.studentsAboveSpecificScore("history", 88));
-        // System.out.println(studentDBWriter.retrieveNameSet());
-        //studentDBWriter.checkExistence("John Doe", "science", 92);
-        //studentDBWriter.mergeData();
-        studentDBWriter.scoreCounter("science");
+        try {
+            studentDBWriter.addStudent(51,"Hariharan",96,97,93,92);
+            studentDBWriter.updateScore("Kumar",96,95,93,88);
+            studentDBWriter.removeStudent("english", 80);
+            studentDBWriter.findMaimumScore("math");
+            System.out.println(studentDBWriter.studentsAboveSpecificScore("history", 88));
+            System.out.println(studentDBWriter.retrieveNameSet());
+            studentDBWriter.checkExistence("John Doe", "science", 92);
+            studentDBWriter.mergeData();
+            studentDBWriter.scoreCounter("science");
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
 
 
@@ -204,18 +208,15 @@ public class StudentDBWriter
    public void scoreCounter(String subject){
         Map<Integer, Integer> scoreCount = new HashMap<>();
         try {
-            String sql = "select  " + subject + ", count(*) from Students group by " + "\""+ subject+"\"";
+            String sql = "select  " + subject + ", count(*) from Students group by " + subject;
             System.out.println(sql);
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                if(scoreCount.containsKey(resultSet.getInt(1))) {
-                    scoreCount.put(resultSet.getInt(1), scoreCount.get(resultSet.getInt(1)) + 1);
-                }else{
-                    scoreCount.put(resultSet.getInt(1),1);
-
-                }
+                System.out.println("Mark: "+resultSet.getInt(1));
+                System.out.println("count: "+resultSet.getInt(2));
+                scoreCount.put(resultSet.getInt(1), resultSet.getInt(2));
             }
             System.out.println(scoreCount);
         }catch (Exception e){

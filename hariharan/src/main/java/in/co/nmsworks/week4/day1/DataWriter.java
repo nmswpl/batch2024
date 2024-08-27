@@ -6,7 +6,9 @@ import java.util.List;
 
 
 public class DataWriter {
-    public static <List> void main(String[] args) {
+    public static  void main(String[] args) {
+        List<String[]> evenList = new ArrayList<String[]>();
+        List<String[]> oddList = new ArrayList<String[]>();
          try(FileReader fileReader = new FileReader("/home/nms/Downloads/Sample_CSV_Data.csv");
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
@@ -14,22 +16,26 @@ public class DataWriter {
              String line;
 
 
+             Writer dbwriter = new DbWriter();
+             Writer filewriter = new WriteToFile();
+
              while((line = bufferedReader.readLine()) != null){
                  String[] details = line.split(",");
-                 Writer dbwriter = new DbWriter();
-                 Writer filewriter = new WriteToFile();
 
                  if(Integer.parseInt(details[2]) % 2 ==0){
-                     dbwriter.open();
-                     dbwriter.write(details);
-                     dbwriter.close();
+                   evenList.add(details);
                  }else{
-                     filewriter.open();
-                     filewriter.write(details);
-                     filewriter.close();
+                   oddList.add(details);
                  }
 
              }
+             dbwriter.open();
+             filewriter.open();
+             dbwriter.write(evenList);
+             filewriter.write(oddList);
+             dbwriter.close();
+             filewriter.close();
+
 
          }catch (Exception e){
              System.out.println(e);

@@ -14,14 +14,7 @@ public class LibraryUsingMap {
     static Scanner sc = new Scanner(System.in);
     static List<Book> listOfBooks = new ArrayList<>();
     static Map<Long, Book> isbnToBook = new HashMap<Long, Book>();
-    static Map<String, Book> nameToBook = new HashMap<>();
-    static Map<String, Book> authorToBook = new HashMap<>();
-    static Map<String, List<Book>> categoryToBook = new HashMap<>();
-    static List<Book> ficitionBooks = new ArrayList<>();
-    static List<Book> nonFicitionBooks = new ArrayList<>();
-    static List<Book> comedy = new ArrayList<>();
-    static List<Book> tragedy = new ArrayList<>();
-    static List<Book> Romance_Tragicomedy = new ArrayList<>();
+
 
 
 
@@ -29,45 +22,9 @@ public class LibraryUsingMap {
         getBookListFromCSV();
         for (Book book : listOfBooks) {
             isbnToBook.put(book.getIsbn(), book);
-            nameToBook.put(book.getName(), book);
-            authorToBook.put(book.getAuthorName(), book);
-            
-        }
-        for (Book book : listOfBooks) {
-            if(book.getCategory().equalsIgnoreCase("Fiction")){
-                ficitionBooks.add(book);
-            } else if (book.getCategory().equalsIgnoreCase("Non-FIction")) {
-                nonFicitionBooks.add(book);
-            } else if (book.getCategory().equalsIgnoreCase("Tragedy")) {
-                tragedy.add(book);
-            } else if (book.getCategory().equalsIgnoreCase("Comedy")) {
-                comedy.add(book);
-            }else{
-                Romance_Tragicomedy.add(book);
-            }
 
         }
-
-        for (Book book : listOfBooks) {
-            if(book.getCategory().equalsIgnoreCase("Fiction")){
-                categoryToBook.put(book.getCategory(),ficitionBooks);
-            } else if (book.getCategory().equalsIgnoreCase("Non-Fiction")) {
-                categoryToBook.put(book.getCategory(), nonFicitionBooks);
-            } else if (book.getCategory().equalsIgnoreCase("comedy")) {
-                categoryToBook.put(book.getCategory(), comedy);
-            } else if (book.getCategory().equalsIgnoreCase("Tragedy")) {
-                categoryToBook.put(book.getCategory(), tragedy);
-            }else{
-                categoryToBook.put(book.getCategory(), Romance_Tragicomedy);
-            }
-
-        }
-
         System.out.println(isbnToBook);
-        System.out.println(nameToBook);
-        System.out.println(authorToBook);
-        System.out.println(categoryToBook);;
-
     }
 
 
@@ -108,9 +65,9 @@ public class LibraryUsingMap {
       ;
         System.out.println("Enter the Category:");
         String category = sc.nextLine();
-        for (String key : categoryToBook.keySet()) {
-            if (key.equals(category)) {
-
+        for(long isbnOfBook : isbnToBook.keySet()) {
+            if(isbnToBook.get(isbnOfBook).getCategory().equalsIgnoreCase(category)) {
+                printBookDetails(isbnOfBook);
             }
         }
 
@@ -121,24 +78,22 @@ public class LibraryUsingMap {
 
         System.out.println("Enter the Author name");
         String authorName = sc.nextLine();
-        for (String key : authorToBook.keySet()) {
-            if (key.equals(authorName)) {
-                printBookDetails(authorToBook.get(key));
+        for(long isbnOfBook : isbnToBook.keySet()) {
+            if(isbnToBook.get(isbnOfBook).getAuthorName().equals(authorName)) {
+                printBookDetails(isbnOfBook);
             }
         }
-
-
     }
 
     private static void searchByBookName() {
-
+        sc.nextLine();
         System.out.println("Enter the Book Name:");
         String bookName = sc.nextLine();
-        for (String key : nameToBook.keySet()) {
-            if (key.equals(bookName)) {
-                printBookDetails(nameToBook.get(key));
-            }
-        }
+       for(long isbnOfBook : isbnToBook.keySet()) {
+           if(isbnToBook.get(isbnOfBook).getName().equals(bookName)) {
+               printBookDetails(isbnOfBook);
+           }
+       }
 
 
     }
@@ -146,22 +101,24 @@ public class LibraryUsingMap {
     private static void searcgByISBN() {
         System.out.println("Enter the ISBN Number:");
         Long isbn = sc.nextLong();
-        for (Long key : isbnToBook.keySet()) {
-            if (key == isbn) {
-                printBookDetails(isbnToBook.get(key));
-            }
-        }
+       for(long isbnOfBooK : isbnToBook.keySet()) {
+           if(isbnToBook.get(isbnOfBooK).getIsbn() == isbn){
+               printBookDetails(isbn);
+
+           }
+       }
     }
 
-
-    private static void printBookDetails(Book book) {
-        System.out.println("ISBN:\t" + book.getIsbn());
-        System.out.println("Name:\t" + book.getName());
-        System.out.println("Author Name:\t" + book.getAuthorName());
-        System.out.println("Category :\t" + book.getCategory());
-        System.out.println("Year of Release :\t" + book.getYearOfRelase());
-        System.out.println("\n");
+    private static void printBookDetails(Long isbn) {
+        System.out.println("ISBN :: " + isbnToBook.get(isbn).getIsbn());
+        System.out.println("Book name :: " + isbnToBook.get(isbn).getName());
+        System.out.println("Author :: " + isbnToBook.get(isbn).getAuthorName());
+        System.out.println("Category :: " + isbnToBook.get(isbn).getCategory());
+        System.out.println("Release year :: " + isbnToBook.get(isbn).getYearOfRelase());
+        System.out.println("****************************************************");
+        System.out.println();
     }
+
 
     public List<Book> getBookListFromCSV() {
 
