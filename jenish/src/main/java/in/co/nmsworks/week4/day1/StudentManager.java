@@ -8,7 +8,7 @@ public class StudentManager {
 
     public List<Student> readFromDb(){
         List<Student> studentList = new ArrayList<>();
-        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "Jenish7474");
+        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Training", "nms", "");
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM Students")) {
             while (rs.next()){
