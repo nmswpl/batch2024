@@ -10,33 +10,39 @@ public class BankingSystem {
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
     private Map<Long, User> userDetails = new HashMap<>();
 
-    public void addUser(String userName, long accountNo){
+    public void addUser(String userName, long accountNo) {
         User user = new User(userName, accountNo);
         userDetails.put(accountNo, user);
         System.out.println("User added successfully.");
     }
 
-    public void deposit(long accountNo, long amount){
+    public void deposit(long accountNo, long amount) {
         User user = userDetails.get(accountNo);
-        if(user != null){
+        if (user != null) {
             long balanceAmount = user.getBalance() + amount;
             user.setBalance(balanceAmount);
             user.setLastTransaction("deposit");
             user.setLastTransactionAmount(amount);
+            LocalDateTime now = LocalDateTime.now();
+            String statement = "Deposited Rs." + amount + " at " + dtf.format(now);
+            user.addStatement(statement);
             System.out.println("Successfully deposited.");
         } else {
             System.out.println("Check the Account number");
         }
     }
 
-    public void withdraw(long accountNo, long amount){
+    public void withdraw(long accountNo, long amount) {
         User user = userDetails.get(accountNo);
-        if(user != null){
+        if (user != null) {
             long balanceAmount = user.getBalance() - amount;
-            if(balanceAmount >= 0) {
+            if (balanceAmount >= 0) {
                 user.setBalance(balanceAmount);
                 user.setLastTransaction("withdraw");
                 user.setLastTransactionAmount(amount);
+                LocalDateTime now = LocalDateTime.now();
+                String statement = "Withdrawn Rs." + amount + " at " + dtf.format(now);
+                user.addStatement(statement);
                 System.out.println("Withdrawal successful.");
             } else {
                 System.out.println("Insufficient balance.");
@@ -46,29 +52,27 @@ public class BankingSystem {
         }
     }
 
-    public void checkBalance(long accountNo){
+    public void checkBalance(long accountNo) {
         User user = userDetails.get(accountNo);
-        if(user != null){
+        if (user != null) {
             long balanceAmount = user.getBalance();
-            System.out.println("Your Bank Account balance is "+balanceAmount);
+            System.out.println("Your Bank Account balance is " + balanceAmount);
         } else {
             System.out.println("Check the Account number");
         }
     }
 
-    public void showStatement(long accountNo){
+    public void showStatement(long accountNo) {
         User user = userDetails.get(accountNo);
-        if(user != null){
-            LocalDateTime now = LocalDateTime.now();
-            String transactionDetails = "";
-            if(user.getLastTransaction().equalsIgnoreCase("deposit")){
-                transactionDetails = "Last Transaction deposited Rs."+user.getLastTransactionAmount()+" at "+dtf.format(now);
-            } else if(user.getLastTransaction().equalsIgnoreCase("withdraw")){
-                transactionDetails = "Last Transaction withdrawn Rs."+user.getLastTransactionAmount()+" at "+dtf.format(now);
+        if (user != null) {
+            if (user.getStatements().isEmpty()) {
+                System.out.println("No transactions found.");
             } else {
-                transactionDetails = "No transactions found.";
+                System.out.println("Transaction History:");
+                for (String statement : user.getStatements()) {
+                    System.out.println(statement);
+                }
             }
-            System.out.println(transactionDetails);
         } else {
             System.out.println("Check the Account number");
         }

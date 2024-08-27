@@ -1,18 +1,24 @@
 package in.co.nmsworks.week4.day2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private String name;
     private long bankAccountNo;
     private long balance = 0;
     private String lastTransaction;
     private long lastTransactionAmount;
+    private List<String> statements;
 
     public User() {
+        this.statements = new ArrayList<>();
     }
 
     public User(String name, long bankAccountNo) {
         this.name = name;
         this.bankAccountNo = bankAccountNo;
+        this.statements = new ArrayList<>();
     }
 
     public String getName() {
@@ -47,13 +53,20 @@ public class User {
         this.lastTransaction = lastTransaction;
     }
 
-
     public long getLastTransactionAmount() {
         return lastTransactionAmount;
     }
 
     public void setLastTransactionAmount(long lastTransactionAmount) {
         this.lastTransactionAmount = lastTransactionAmount;
+    }
+
+    public List<String> getStatements() {
+        return statements;
+    }
+
+    public void addStatement(String statement) {
+        this.statements.add(statement);
     }
 
     @Override
