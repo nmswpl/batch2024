@@ -81,7 +81,6 @@ public class StudentManager {
         Map<Student, List<Integer>> newStudentMap = new HashMap<>();
 
         Student s = new Student();
-        s = new Student();
         s.setId(studentDetails.size() + 1);
         s.setName("John");
         s.setMath(78);
