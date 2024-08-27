@@ -21,9 +21,8 @@ public class StudentsAdmin {
     }
     public Map<Integer,Student> retriveFromDb(){
 
-        try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training");
-            PreparedStatement ps=con.prepareStatement("Select * from Students");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training");
+            PreparedStatement ps=con.prepareStatement("Select * from Students")){
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
                 Student student=new Student();

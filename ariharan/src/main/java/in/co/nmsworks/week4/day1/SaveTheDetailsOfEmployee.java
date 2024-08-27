@@ -13,8 +13,10 @@ public class SaveTheDetailsOfEmployee {
     Writer fileWrite=new WriteTOFIle();
 
     public static void main(String[] args){
-        new SaveTheDetailsOfEmployee().divider();
-        new SaveTheDetailsOfEmployee().saver();
+        SaveTheDetailsOfEmployee save=new  SaveTheDetailsOfEmployee();
+        save.divider();
+        save.saver();
+        save.closer();
     }
     public void divider(){
         try (FileReader fr=new FileReader("/home/nms/Sample_CSV_Data.csv");
@@ -54,6 +56,12 @@ public class SaveTheDetailsOfEmployee {
 
                 fileWrite.write(data);
             }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void closer(){
+        try {
             dbWrite.closes();
             fileWrite.closes();
         }catch (Exception e){
