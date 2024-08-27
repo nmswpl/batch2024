@@ -16,7 +16,13 @@ public class LibraryUsingMap {
     static Map<Long, Book> isbnToBook = new HashMap<Long, Book>();
     static Map<String, Book> nameToBook = new HashMap<>();
     static Map<String, Book> authorToBook = new HashMap<>();
-    static Map<String, Book> categoryToBook = new HashMap<>();
+    static Map<String, List<Book>> categoryToBook = new HashMap<>();
+    static List<Book> ficitionBooks = new ArrayList<>();
+    static List<Book> nonFicitionBooks = new ArrayList<>();
+    static List<Book> comedy = new ArrayList<>();
+    static List<Book> tragedy = new ArrayList<>();
+    static List<Book> Romance_Tragicomedy = new ArrayList<>();
+
 
 
     public LibraryUsingMap() {
@@ -25,7 +31,36 @@ public class LibraryUsingMap {
             isbnToBook.put(book.getIsbn(), book);
             nameToBook.put(book.getName(), book);
             authorToBook.put(book.getAuthorName(), book);
-            categoryToBook.put(book.getCategory(), book);
+            
+        }
+        for (Book book : listOfBooks) {
+            if(book.getCategory().equalsIgnoreCase("Fiction")){
+                ficitionBooks.add(book);
+            } else if (book.getCategory().equalsIgnoreCase("Non-FIction")) {
+                nonFicitionBooks.add(book);
+            } else if (book.getCategory().equalsIgnoreCase("Tragedy")) {
+                tragedy.add(book);
+            } else if (book.getCategory().equalsIgnoreCase("Comedy")) {
+                comedy.add(book);
+            }else{
+                Romance_Tragicomedy.add(book);
+            }
+
+        }
+
+        for (Book book : listOfBooks) {
+            if(book.getCategory().equalsIgnoreCase("Fiction")){
+                categoryToBook.put(book.getCategory(),ficitionBooks);
+            } else if (book.getCategory().equalsIgnoreCase("Non-Fiction")) {
+                categoryToBook.put(book.getCategory(), nonFicitionBooks);
+            } else if (book.getCategory().equalsIgnoreCase("comedy")) {
+                categoryToBook.put(book.getCategory(), comedy);
+            } else if (book.getCategory().equalsIgnoreCase("Tragedy")) {
+                categoryToBook.put(book.getCategory(), tragedy);
+            }else{
+                categoryToBook.put(book.getCategory(), Romance_Tragicomedy);
+            }
+
         }
 
         System.out.println(isbnToBook);
@@ -39,7 +74,7 @@ public class LibraryUsingMap {
     public static void main(String[] args) {
 
 
-        Library library = new Library();
+       LibraryUsingMap libraryUsingMap = new LibraryUsingMap();
 
         System.out.println();
         int option = 0;
@@ -70,12 +105,12 @@ public class LibraryUsingMap {
     }
 
     private static void searchByCategory() {
-        sc.nextLine();
+      ;
         System.out.println("Enter the Category:");
         String category = sc.nextLine();
         for (String key : categoryToBook.keySet()) {
             if (key.equals(category)) {
-                printBookDetails(categoryToBook.get(key));
+
             }
         }
 
@@ -88,7 +123,7 @@ public class LibraryUsingMap {
         String authorName = sc.nextLine();
         for (String key : authorToBook.keySet()) {
             if (key.equals(authorName)) {
-                printBookDetails(categoryToBook.get(key));
+                printBookDetails(authorToBook.get(key));
             }
         }
 
@@ -101,7 +136,7 @@ public class LibraryUsingMap {
         String bookName = sc.nextLine();
         for (String key : nameToBook.keySet()) {
             if (key.equals(bookName)) {
-                printBookDetails(categoryToBook.get(key));
+                printBookDetails(nameToBook.get(key));
             }
         }
 
@@ -113,7 +148,7 @@ public class LibraryUsingMap {
         Long isbn = sc.nextLong();
         for (Long key : isbnToBook.keySet()) {
             if (key == isbn) {
-                printBookDetails(categoryToBook.get(key));
+                printBookDetails(isbnToBook.get(key));
             }
         }
     }
