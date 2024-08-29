@@ -29,7 +29,7 @@ public class File1 {
             bw.write(s[i]);
             bw.newLine();
         }
-bw.close();
+        bw.close();
         fw.close();
 
     }
