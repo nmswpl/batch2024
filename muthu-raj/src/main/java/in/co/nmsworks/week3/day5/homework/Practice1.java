@@ -236,7 +236,7 @@ public class Practice1 {
         }
     }
 
-    private static void fib(int limit)
+    public static void fib(int limit)
     {
         int n1 = 0;
         int n2 = 1;

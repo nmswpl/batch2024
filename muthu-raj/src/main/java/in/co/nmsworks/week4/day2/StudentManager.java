@@ -65,21 +65,67 @@ public class StudentManager {
         s.setHistory(56);
         idToStudentMap.put(s.getId(), s);
 
-
-
-        for(Integer id : idToStudentMap.keySet())
+        for (Integer id : idToStudentMap.keySet())
         {
-
-            try(PreparedStatement ps = con.prepareStatement(""))
+            if(getStudentAsList().contains(id))
             {
+                String sql = "UPDATE Students SET math = ?, english = ?, science = ?, history = ?";
+                try(PreparedStatement ps = con.prepareStatement(sql))
+                {
+                    ps.setInt(1,idToStudentMap.get(id).getMath());
+                    ps.setInt(2,idToStudentMap.get(id).getEnglish());
+                    ps.setInt(3,idToStudentMap.get(id).getScience());
+                    ps.setInt(4,idToStudentMap.get(id).getHistory());
+                    ps.executeUpdate();
 
+                    System.out.println("Student details updated!");
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
             }
-            catch (Exception e)
-            {
+            else {
+                String sql = "INSERT INTO Students VALUES(?, ?, ?, ?, ?, ?)";
+                try(PreparedStatement ps = con.prepareStatement(sql))
+                {
+                    ps.setInt(1,id);
+                    ps.setInt(2,idToStudentMap.get(id).getMath());
+                    ps.setInt(3,idToStudentMap.get(id).getEnglish());
+                    ps.setInt(4,idToStudentMap.get(id).getScience());
+                    ps.setInt(5,idToStudentMap.get(id).getHistory());
+                    ps.executeUpdate();
 
+                    System.out.println("Student details inserted!");
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private static List<Integer> getStudentAsList() {
+        List<Integer> studentIDList = new ArrayList<>();
+
+        String sql = "SELECT id FROM Students";
+        try(PreparedStatement ps = con.prepareStatement(sql))
+        {
+            try(ResultSet rs = ps.executeQuery())
+            {
+                while(rs.next())
+                {
+                    studentIDList.add(rs.getInt(1));
+                }
             }
 
         }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return studentIDList;
     }
 
     private void countScores() {
