@@ -4,7 +4,7 @@ public class QueueRunner
 {
     public static void main(String[] args) {
 
-        QueueList queueList = new QueueList();
+        QueueList<Integer> queueList = new QueueList<Integer>();
 
         queueList.enqueue(10);
         queueList.enqueue(20);

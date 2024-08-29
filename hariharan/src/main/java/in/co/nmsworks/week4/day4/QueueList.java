@@ -3,17 +3,18 @@ package in.co.nmsworks.week4.day4;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueueList implements Queue{
+public class QueueList<T> implements Queue<T>{
 
-    private List<Object> queueList = new ArrayList<Object>();
+    private final List<T> queueList = new ArrayList<T>();
     @Override
-    public void enqueue(Object object) {
-        queueList.add(object);
-        System.out.println(object + " is Added to queue");
+    public void enqueue(T element) {
+        queueList.add(element);
+        System.out.println(element + " is Added to queue");
     }
 
+
     @Override
-    public Object dequue() {
+    public T dequue() {
 
         return queueList.remove(0);
     }
