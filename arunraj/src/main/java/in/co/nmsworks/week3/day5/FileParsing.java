@@ -10,13 +10,12 @@ public class FileParsing {
 
     public void tableToFile(List<Trainees> traineesList){
         try {
-            FileWriter fw = new FileWriter("/home/nms/Documents/Trainees");
+            FileWriter fw = new FileWriter("/home/nms/Documents/Trainees.txt");
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (Trainees trainee : traineesList){
-                bw.write(trainee.getId());
-                bw.write(trainee.getName());
-                bw.write(trainee.getEmail());
+                String line = String.format("%s,%s,%s",trainee.getId(),trainee.getName(),trainee.getEmail());
+                bw.write(line);
                 bw.newLine();
             }
             bw.close();

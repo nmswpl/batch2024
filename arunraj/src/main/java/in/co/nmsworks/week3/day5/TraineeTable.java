@@ -20,7 +20,6 @@ public class TraineeTable {
                 ResultSet rs = ps.executeQuery();
                 List<Trainees> listOfTrainees = new ArrayList<>();
 
-
                 while (rs.next()) {
                     Trainees trainee = new Trainees(rs.getInt(1),rs.getString(2),rs.getString(3));
                     listOfTrainees.add(trainee);
@@ -32,11 +31,10 @@ public class TraineeTable {
                 ps.close();
                 con.close();
                 return listOfTrainees;
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
     }
-
-
 }

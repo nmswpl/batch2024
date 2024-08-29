@@ -1,4 +1,4 @@
-/*package in.co.nmsworks.week4.day1;
+package in.co.nmsworks.week4.day1;
 
 import java.io.BufferedReader;
 
@@ -9,13 +9,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class FileAndDB implements Writer{
     public static void main(String[] args) {
         FileAndDB fdb = new FileAndDB();
-        List<Participants> participantsList = fdb.filParsing();
         Participants parti = new Participants();
+        List<Participants> participantsList = fdb.filParsing();
+        fdb.write(participantsList);
+
 
 
     }
@@ -28,13 +31,14 @@ public class FileAndDB implements Writer{
             String line = null;
 
             while ((line = br.readLine()) != null) {
-                String[] words = line.split("\",\"");
-                Participants participants = new Participants(Integer.parseInt(words[0]),words[1].replace("\"","").trim(),Integer.parseInt(words[2]),words[3],
-                        words[4],words[5],words[6],words[7],words[8].replace("\"",""),words[9].replace("\""," ").trim());
+                String[] words = line.split(",");
+                Participants participants = new Participants(Integer.parseInt(words[0]),words[1].replace("\"","").trim(),Integer.parseInt(words[2]),words[3].replace("\"","").trim(),
+                        words[4].replace("\"","").trim(),words[5].replace("\"","").trim(),words[6].replace("\"","").trim(),
+                        words[7].replace("\"","").trim(),words[8].replace("\"",""),words[9].replace("\""," ").trim());
                 listOFParticipents.add(participants);
                 br.readLine();
             }
-            //System.out.println(listOFParticipents);
+            System.out.println(listOFParticipents);
             br.close();
             fr.close();
             return listOFParticipents;
@@ -47,13 +51,13 @@ public class FileAndDB implements Writer{
 
 
     @Override
-    public void write() {
+    public void write(List<Participants> listOfParti) {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Training","nms","");
-            PreparedStatement stmt = ((Connection) con).prepareStatement("INSERT INTO detailsOfCandidates values(?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO detailsOfCandidates values(?,?,?,?,?,?,?,?,?,?)");
             Participants pr = new Participants();
 
-            for(Participants participant : Participants){
+            for(Participants participant : listOfParti){
                 stmt.setInt(1,participant.getId());
                 stmt.setString(2,participant.getName());
                 stmt.setInt(3,participant.getAge());
@@ -64,7 +68,6 @@ public class FileAndDB implements Writer{
                 stmt.setString(8,participant.getCity());
                 stmt.setString(9,participant.getState());
                 stmt.setString(10,participant.getCountry());
-                stmt.executeUpdate();
             }
 
             stmt.close();
@@ -74,5 +77,10 @@ public class FileAndDB implements Writer{
         }
 
     }
-}*/
+
+    @Override
+    public void write() {
+
+    }
+}
 

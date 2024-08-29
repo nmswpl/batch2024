@@ -18,6 +18,10 @@ public class Student {
         this.historyMark = historyMark;
     }
 
+    public Student(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

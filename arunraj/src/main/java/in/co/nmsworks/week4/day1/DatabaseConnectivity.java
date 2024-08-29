@@ -14,17 +14,18 @@ public class DatabaseConnectivity {
         DatabaseConnectivity db = new DatabaseConnectivity();
         db.dbToList();
         db.listToMap();
-        /*db.addEntry(51,"Arun",80,89,78,90);
-        db.removeEntriesMath(80);
-        db.getAllStudents();
+        //db.addEntry(51,"Arun",80,89,78,90);
+        /*db.getAllStudents();
         db.highestScoreEnglish();
         db.highestScoreMath();
         db.highestScoreScience();
         db.highestScoreHistory();*/
-        db.updateScores(51,"Arun",78,98,78,67);
-        for (Map.Entry<Integer,Student> entry : db.mapOfStudents.entrySet()){
-            System.out.println(entry);
-        }
+        //db.updateScores(51,"Arun",78,98,78,67);
+        //db.removeEntriesMath(80);
+        //db.aboveTheThresholdMath(80);
+        //db.aboveTheThresholdEng(80);
+        //db.aboveThreshold(80,89,90,78);
+        System.out.println(db.occuranceOfMath(89));
 
 
     }
@@ -54,9 +55,6 @@ public class DatabaseConnectivity {
         for (Student student : dbToList()){
             mapOfStudents.put(student.getId(), student);
         }
-        /*for (Map.Entry<Integer,Student> entry : mapOfStudents.entrySet()){
-            System.out.println(entry);
-        }*/
         return mapOfStudents;
     }
 
@@ -78,11 +76,8 @@ public class DatabaseConnectivity {
          for (Map.Entry<Integer,Student> entry : listToMap().entrySet()){
              Student student = entry.getValue();
              if(student.getMathMark() < mathMark){
-                 listToMap().remove(student);
+                 listToMap().remove(student.getId());
              }
-         }
-         for (Map.Entry<Integer,Student> entry : listToMap().entrySet()){
-             System.out.println(entry);
          }
      }
 
@@ -167,4 +162,63 @@ public class DatabaseConnectivity {
             }
         }
     }
+
+    public void aboveTheThresholdMath(int mathM){
+        Map<String ,Integer> listOfMathThres = new HashMap<>();
+        for (Map.Entry<Integer,Student> entry : listToMap().entrySet()){
+            Student student = entry.getValue();
+            if(student.getMathMark() > mathM){
+            listOfMathThres.put(student.getName(),student.getMathMark());
+            }
+        }
+        for (Map.Entry<String,Integer> entry : listOfMathThres.entrySet()){
+            System.out.println(entry);
+        }
+    }
+    public void aboveTheThresholdEng(int engM){
+        Map<String ,Integer> listOfEngThres = new HashMap<>();
+        for (Map.Entry<Integer,Student> entry : listToMap().entrySet()){
+            Student student = entry.getValue();
+            if(student.getEnglishMark() > engM){
+                listOfEngThres.put(student.getName(),student.getEnglishMark());
+            }
+        }
+        for (Map.Entry<String,Integer> entry : listOfEngThres.entrySet()){
+            System.out.println(entry);
+        }
+    }
+
+    public void aboveThreshold(int mathM,int engM,int sciM,int hisM){
+        Map<String ,Student> listOfThres = new HashMap<>();
+        for (Map.Entry<Integer,Student> entry : listToMap().entrySet()){
+            Student student = entry.getValue();
+            if(student.getMathMark() > mathM || student.getEnglishMark() > engM ||
+            student.getScienceMark() > sciM || student.getHistoryMark() > hisM){
+                listOfThres.put(student.getName(),student);
+            }
+        }
+        for (Map.Entry<Integer,Student> entry : listToMap().entrySet()){
+            System.out.println(entry);
+        }
+    }
+
+    public void mergeAnotherMap(){
+
+
+    }
+
+    public Map<Integer,Integer> occuranceOfMath(int mathM){
+        Map<Integer,Integer> markToOccurence = new HashMap<>();
+        for (Map.Entry<Integer, Student> entry : mapOfStudents.entrySet()) {
+            Integer mark = entry.getValue().getMathMark();
+            if(mathM == mark) {
+                int count = markToOccurence.getOrDefault(mark, 0);
+                markToOccurence.put(mark, count + 1);
+            }
+        }
+        return markToOccurence;
+    }
 }
+         /*for (Map.Entry<Integer,Student> entry : listToMap().entrySet()){
+             System.out.println(entry);
+         }*/
