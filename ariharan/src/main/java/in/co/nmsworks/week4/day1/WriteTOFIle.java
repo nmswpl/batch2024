@@ -50,8 +50,9 @@ public  class WriteTOFIle implements Writer {
 
     @Override
     public void closes() throws Exception{
-        fr.close();
         br.close();
+        fr.close();
+
 
     }
 }

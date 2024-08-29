@@ -45,7 +45,7 @@ public class SaveTheDetailsOfEmployee {
 
     public void saver(){
         try {
-           dbWrite.open();
+            dbWrite.open();
             fileWrite.open();
             for (String[] data : oddList) {
 
