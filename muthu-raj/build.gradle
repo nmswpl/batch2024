@@ -10,6 +10,12 @@ dependencies {
     implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.3.0'
     implementation group: 'com.opencsv', name: 'opencsv', version: '5.9'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:2.11.0'
+
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13' // Check for the latest version
+    implementation 'com.google.code.gson:gson:2.10.1'
+
 }
 buildscript {
     ext.kotlin_version = '1.9.23'
