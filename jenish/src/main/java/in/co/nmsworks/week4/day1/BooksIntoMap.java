@@ -2,7 +2,7 @@ package in.co.nmsworks.week4.day1;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
-import in.co.nmsworks.week3.day5.Books;
+import in.co.nmsworks.week3.day5.Book;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 
 public class BooksIntoMap {
-    private Map<Long,Books> bookIntoMap = new HashMap<>();
-    private List<Books> booksList = new ArrayList<>();
+    private Map<Long, Book> bookIntoMap = new HashMap<>();
+    private List<Book> booksList = new ArrayList<>();
 
-    public List<Books> getBookListFromCsv() {
+    public List<Book> getBookListFromCsv() {
         try (FileReader reader = new FileReader("/home/nms/Downloads/Library.csv");
              CSVReader csvReader = new CSVReader(reader)) {
 
@@ -27,7 +27,7 @@ public class BooksIntoMap {
                 String author = bookDetails[2].trim();
                 String category = bookDetails[3].trim();
                 String releaseYear = bookDetails[4].trim();
-                Books book = new Books(ISBN, bookName, author, category, releaseYear, true);
+                Book book = new Book(ISBN, bookName, author, category, releaseYear, true);
                 booksList.add(book);
             }
         } catch (IOException | CsvValidationException e) {
@@ -36,15 +36,15 @@ public class BooksIntoMap {
         return booksList;
     }
 
-    public Map<Long,Books> putIntoMap(){
-        for (Books book : booksList) {
+    public Map<Long, Book> putIntoMap(){
+        for (Book book : booksList) {
             bookIntoMap.put(book.getISBN(),book);
         }
         return bookIntoMap;
     }
 
     public void searchById(long id) {
-        Books book = bookIntoMap.get(id);
+        Book book = bookIntoMap.get(id);
         if (book != null) {
             System.out.println("Search by ISBN.....");
             System.out.println("****************************************************");

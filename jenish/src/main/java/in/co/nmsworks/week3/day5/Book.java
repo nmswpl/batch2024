@@ -8,7 +8,7 @@ import java.util.List;
 import com.opencsv.*;
 import com.opencsv.exceptions.CsvValidationException;
 
-public class Books {
+public class Book {
     private long ISBN;
     private String bookName;
     private String author;
@@ -16,10 +16,10 @@ public class Books {
     private String releaseYear;
     private boolean isAvailable;
 
-    public Books() {
+    public Book() {
     }
 
-    public Books(long ISBN, String bookName, String author, String category, String releaseYear, boolean status) {
+    public Book(long ISBN, String bookName, String author, String category, String releaseYear, boolean status) {
         this.ISBN = ISBN;
         this.bookName = bookName;
         this.author = author;
@@ -67,8 +67,8 @@ public class Books {
                 '}';
     }
 
-    public List<Books> readFromFile() {
-        List<Books> booksList = new ArrayList<>();
+    public List<Book> readFromFile() {
+        List<Book> booksList = new ArrayList<>();
         try (FileReader reader = new FileReader("/home/nms/Library.csv");
              CSVReader csvReader = new CSVReader(reader)) {
 
@@ -80,7 +80,7 @@ public class Books {
                 String author = bookDetails[2].trim();
                 String category = bookDetails[3].trim();
                 String releaseYear = bookDetails[4].trim();
-                Books book = new Books(ISBN, bookName, author, category, releaseYear, true);
+                Book book = new Book(ISBN, bookName, author, category, releaseYear, true);
                 booksList.add(book);
             }
         } catch (IOException | CsvValidationException e) {
@@ -89,12 +89,12 @@ public class Books {
         return booksList;
     }
 
-    public void writeIntoDb(List<Books> booksList) {
+    public void writeIntoDb(List<Book> booksList) {
         String sql = "insert into library values(?,?,?,?,?,?)";
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Training", "nms", "");
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             int noOfRows = 0;
-            for (Books book : booksList) {
+            for (Book book : booksList) {
                 preparedStatement.setLong(1, book.getISBN());
                 preparedStatement.setString(2, book.getBookName());
                 preparedStatement.setString(3, book.getAuthor());

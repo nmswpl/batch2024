@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Library {
     public static void main(String[] args) {
-        Books books = new Books();
+        Book books = new Book();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("\n***********************************************\n Welcome to the Library Management System");
@@ -96,7 +96,7 @@ public class Library {
                     break;
 
                 case 10:
-                    List<Books> booksList = books.readFromFile();
+                    List<Book> booksList = books.readFromFile();
                     books.writeIntoDb(booksList);
                     break;
 
