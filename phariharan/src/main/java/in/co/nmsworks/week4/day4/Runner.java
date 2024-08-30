@@ -1,4 +1,4 @@
-package in.co.nmsworks.week4.day3;
+package in.co.nmsworks.week4.day4;
 
 public class Runner {
     public static void main(String[] args) {
@@ -23,6 +23,16 @@ public class Runner {
         stackList.pop();
         System.out.println("\n");
         stackList.print();
+
+        QueList qlist = new QueList();
+        qlist.enQueue(10);
+        qlist.enQueue(20);
+        qlist.enQueue(30);
+        qlist.enQueue(40);
+        System.out.println(qlist.size());
+        qlist.print();
+        qlist.deQueue();
+        qlist.print();
 
     }
 }

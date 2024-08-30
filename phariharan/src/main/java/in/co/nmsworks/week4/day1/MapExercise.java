@@ -194,14 +194,14 @@ public class MapExercise {
         return 0;
     }
 
-    private void updateMarks(String name, int mathMArk, int englishMark, int scienceMark, int historyMark) {
+    private void updateMarks(String name, int mathMark, int englishMark, int scienceMark, int historyMark) {
         for (Integer integer : studentMap.keySet()) {
             if (name.equals(studentMap.get(integer).getName())) {
-                studentMap.replace(integer, new Student(integer, name, mathMArk, englishMark, scienceMark, historyMark));
+                studentMap.replace(integer, new Student(integer, name, mathMark, englishMark, scienceMark, historyMark));
                 return;
             }
         }
-        addNewEntries(name, mathMArk, englishMark, scienceMark, historyMark);
+        addNewEntries(name, mathMark, englishMark, scienceMark, historyMark);
     }
 
     private void addNewEntries(String name, int mathMark, int englishMark, int scienceMark, int historyMark) {
@@ -218,7 +218,7 @@ public class MapExercise {
     }
 
     private static List<Student> getMapFromDB() {
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "Hari");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/training");
              Statement statement = conn.createStatement();
              ResultSet rs = statement.executeQuery("SELECT * FROM Students")) {
             List<Student> studentList = new ArrayList<>();
