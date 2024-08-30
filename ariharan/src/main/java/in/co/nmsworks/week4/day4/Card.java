@@ -1,6 +1,6 @@
 package in.co.nmsworks.week4.day4;
 
-public class Card {
+public class Card{
     private String face;
     private String value;
 
@@ -21,4 +21,6 @@ public class Card {
     public String toString(){
         return  face + " " + value ;
     }
+
+
 }
