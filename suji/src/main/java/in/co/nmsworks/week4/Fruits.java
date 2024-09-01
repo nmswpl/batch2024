@@ -81,7 +81,8 @@ class FruitDetails {
         }
     }
 
-    public void writeInDb() throws SQLException {
+    public void writeInDb() throws SQLException
+    {
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/practice", "nms", "");
              PreparedStatement ps = con.prepareStatement("INSERT INTO fruits values (?,?,?) ")) {
             for (Fruits listofFruit : listofFruits) {
@@ -118,6 +119,31 @@ class FruitDetails {
         }
     }
 
+   public void readFRomDbEvenQuantity(String name,int quantity)
+   {
+       try(Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/practice","nms","");
+           PreparedStatement ps= con.prepareStatement("select name from fruits where quantity = ? "))
+       {
+           ps.setInt(1,10);
+
+           ResultSet rs= ps.executeQuery();
+           while (rs.next())
+           {
+               String namefruit=rs.getString(1);
+           }
+           PreparedStatement ps1= con.prepareStatement("update fruits set name= ? where quantity = ? ");
+           ps1.setString(1,name);
+           ps1.setInt(2,quantity);
+
+           int row= ps1.executeUpdate();
+
+
+           System.out.println(" Rows affected :: "+row);
+
+       } catch (SQLException e) {
+           throw new RuntimeException(e);
+       }
+   }
     public void writeTofile() throws SQLException, IOException {
         FileWriter fw=new FileWriter("/home/nms/Practice/fruit.txt");
         BufferedWriter bw=new BufferedWriter(fw);
@@ -136,8 +162,8 @@ class FruitDetails {
         FruitDetails ob = new FruitDetails();
         ob.getDataFromFile();
      //   ob.writeInDb();
-        ob.readFRomDb();
-        ob.writeTofile();
-
+   //     ob.readFRomDb();
+    //    ob.writeTofile();
+ob.readFRomDbEvenQuantity("Strawberry",10);
     }
 }
