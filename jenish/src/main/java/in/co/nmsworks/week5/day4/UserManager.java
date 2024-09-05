@@ -1,4 +1,4 @@
-package in.co.nmsworks.week5;
+package in.co.nmsworks.week5.day4;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -23,13 +23,12 @@ public class UserManager {
                 System.out.println("Status Code: " + statusCode);
 
                 String responseBody = EntityUtils.toString(response.getEntity());
-                //System.out.println("Response Body: " + responseBody);
 
                 Gson gson = new Gson();
                 List<User> users = gson.fromJson(responseBody, new TypeToken<List<User>>(){}.getType());
 
                 for (User user : users) {
-                    System.out.println(user);
+                    user.print(user);
                 }
 
             } catch (ClientProtocolException e) {
@@ -45,5 +44,7 @@ public class UserManager {
     public static void main(String[] args) {
         UserManager userManager = new UserManager();
         userManager.getAllUsers();
+
+        User user = new User();
     }
 }
