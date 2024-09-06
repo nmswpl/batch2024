@@ -3,7 +3,6 @@ package in.co.nmsworks.week4.day1;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SaveTheDetailsOfEmployee {
@@ -14,11 +13,11 @@ public class SaveTheDetailsOfEmployee {
 
     public static void main(String[] args){
         SaveTheDetailsOfEmployee save=new  SaveTheDetailsOfEmployee();
-        save.divider();
+        save.readFromFile();
         save.saver();
         save.closer();
     }
-    public void divider(){
+    public void readFromFile(){
         try (FileReader fr=new FileReader("/home/nms/Sample_CSV_Data.csv");
              BufferedReader br=new BufferedReader(fr);) {
             String line="";
