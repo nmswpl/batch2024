@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        img {width : 4cm;height : 5cm;border : 1px solid black;display : inline -flex}
+        .imgcon{display : flex ; position : relative;}
+    </style>
+</head>
+<body>
+    <div class = "imgcon">
+    <img src="A1.png" id="one">
+    <img src="8.png" id="eight">
+    <img src="10.png" id="ten">
+    </div>
+    <button id="oneC">a1 top</button>
+    <button id="tenC">10 top</button>
+    <button id="eightC">8 top</button>
+<script>
+    $(document).ready(function(){
+         $("#oneC").click(function() {
+            $("#one").css({"z-index" : "3" , "display" : "inline-flex" , "position" : "fixed" ,"margin" : "1cm"});
+            $("#eight").css({"z-index" : "2" , "display" : "inline-flex" , "position" : "absolute" ,"margin" : "2cm"});
+            $("#ten").css({"z-index" : "1" , "display" : "inline-flex" ,"position" : "relative" ,"margin" : "3cm" });
+         });
+         $("#eightC").click(function() {
+            $("#one").css({"z-index" : "1" , "display" : "inline-flex" , "position" : "fixed" ,"margin" : "1cm"});
+            $("#eight").css({"z-index" : "3" , "display" : "inline-flex" , "position" : "absolute" ,"margin" : "2cm"});
+            $("#ten").css({"z-index" : "2" , "display" : "inline-flex" ,"position" : "relative" ,"margin" : "3cm" });
+         });
+         $("#tenC").click(function() {
+            $("#one").css({"z-index" : "1" , "display" : "inline-flex" , "position" : "fixed" ,"margin" : "1cm"});
+            $("#eight").css({"z-index" : "2" , "display" : "inline-flex" , "position" : "absolute" ,"margin" : "2cm"});
+            $("#ten").css({"z-index" : "3" , "display" : "inline-flex" ,"position" : "relative" ,"margin" : "3cm" });
+         });
+         });
+</script>
+</body>
+</html>

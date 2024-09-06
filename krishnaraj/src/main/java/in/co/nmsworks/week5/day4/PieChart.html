@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pie Chart with Hover Effects</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <style>
+        .popup {
+          display: none; /* Hidden by default */
+          position: fixed;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          background: white;
+          border: 1px solid #ccc;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+          max-width: 800px; /* Adjust width as needed */
+          overflow-x: auto; /* Scroll if table is wider */
+        }
+        .popup .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        table, th, td {
+          border: 1px solid black;
+        }
+        th, td {
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<!-- Popup container -->
+<div id="popup" class="popup">
+    <span class="close-btn" onclick="closePopup()">X</span>
+    <div id="popup-content">
+        <!-- Table will be dynamically inserted here -->
+    </div>
+</div>
+
+<script>
+    var xValues = ["Student", "Teacher", "Staff"];
+    var yValues = [400, 12, 10];
+    var barColors = ["blue", "black", "skyblue"];
+
+    // Dummy data for detailed view with student info
+    var detailedData = {
+      "Student": [
+        { id: "S001", name: "Alice", address: "123 Main St", age: 20 },
+        { id: "S002", name: "Bob", address: "456 Oak Ave", age: 22 },
+        { id: "S003", name: "Charlie", address: "789 Pine Rd", age: 21 }
+      ],
+      "Teacher": [
+        { id: "T001", name: "Dr. Smith", address: "101 Maple St", subject: "Math" },
+        { id: "T002", name: "Ms. Johnson", address: "202 Birch Blvd", subject: "Science" },
+        { id: "T003", name: "Mr. Brown", address: "303 Cedar Ct", subject: "English" }
+      ],
+      "Staff": [
+        { id: "ST001", name: "Janet", address: "404 Elm St", role: "Admin" },
+        { id: "ST002", name: "Mike", address: "505 Willow Way", role: "Support" },
+        { id: "ST003", name: "Sarah", address: "606 Spruce St", role: "Maintenance" }
+      ]
+    };
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "MAP TRIAL"
+        },
+        onClick: function(event, elements) {
+          if (elements.length) {
+            var element = elements[0];
+            var index = element._index; // Use 'index' for Chart.js 3.x+
+            var label = myChart.data.labels[index];
+            var details = detailedData[label];
+            showPopup(label, details);
+          }
+        }
+      }
+    });
+
+    // Function to show the popup with detailed data in a table
+    function showPopup(label, details) {
+      if (!details) {
+        document.getElementById('popup-content').innerHTML = `<p>No data available for ${label}.</p>`;
+        document.getElementById('popup').style.display = 'block';
+        return;
+      }
+
+      var content = `
+        <h3>${label} Details</h3>
+        <table>
+          <thead>
+            <tr>
+              ${Object.keys(details[0]).map(key => `<th>${key.charAt(0).toUpperCase() + key.slice(1)}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody>
+            ${details.map(item => `
+              <tr>
+                ${Object.values(item).map(value => `<td>${value}</td>`).join('')}
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+      document.getElementById('popup-content').innerHTML = content;
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+</script>
+</body>
+</html>

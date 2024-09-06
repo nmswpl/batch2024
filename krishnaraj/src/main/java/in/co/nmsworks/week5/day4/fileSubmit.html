@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<label for="nameV">NAME:</label>
+<input type="text" id="nameV">
+<br>
+
+<label for="rollV">RollNO:</label>
+<input type="text" id="rollV">
+<br>
+
+<label for="deptV">DEPT:</label>
+<select id="deptV">
+    <option value="">Select Department</option>
+    <option value="IT">IT</option>
+    <option value="CSC">CSC</option>
+    <option value="ECE">ECE</option>
+</select>
+<br>
+
+<button id="addD">ADD</button>
+<br>
+<button id="showD">SHOW ALL</button>
+<br>
+
+<label for="filterDept">Filter by Department:</label>
+<select id="filterDept">
+    <option value="">Select Department</option>
+    <option value="IT">IT</option>
+    <option value="CSC">CSC</option>
+    <option value="ECE">ECE</option>
+</select>
+<br>
+<button id="filterD">FILTER</button>
+
+<div id="tableD"></div>
+
+<script>
+    let students = [];
+
+    $(document).ready(function(){
+        $("#addD").click(function(){
+            let nameV = $("#nameV").val();
+            let rollNoV = $("#rollV").val();
+            let deptV = $("#deptV").val();
+
+            if (nameV && rollNoV && deptV) {
+                let student = {
+                    name: nameV,
+                    rollNo: rollNoV,
+                    department: deptV
+                };
+                students.push(student);
+
+                // Clear input fields after adding
+                $("#nameV").val('');
+                $("#rollV").val('');
+                $("#deptV").val('');
+            } else {
+                alert("Please fill out all fields.");
+            }
+        });
+
+        $("#showD").click(function(){
+            displayTable(students);
+        });
+
+        $("#filterD").click(function(){
+            let filterDept = $("#filterDept").val();
+            let filteredStudents = students.filter(student => student.department === filterDept || filterDept === "");
+            displayTable(filteredStudents);
+        });
+
+        function displayTable(studentList) {
+            if (studentList.length === 0) {
+                $("#tableD").html("<p>No students to display.</p>");
+                return;
+            }
+
+            let tableHtml = '<table><thead><tr><th>Name</th><th>Roll Number</th><th>Department</th><th>Action</th></tr></thead><tbody>';
+
+            studentList.forEach((student, index) => {
+                tableHtml += `<tr>
+                    <td>${student.name}</td>
+                    <td>${student.rollNo}</td>
+                    <td>${student.department}</td>
+                    <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+                </tr>`;
+            });
+
+            tableHtml += '</tbody></table>';
+            $("#tableD").html(tableHtml);
+        }
+
+        // Delegate event to handle remove button clicks
+        $("#tableD").on("click", ".remove-btn", function(){
+            let index = $(this).data("index");
+            students.splice(index, 1);
+            displayTable(students);
+        });
+    });
+</script>
+</body>
+</html>

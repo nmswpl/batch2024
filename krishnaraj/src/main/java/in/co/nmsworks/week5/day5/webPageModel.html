@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .mainDiv{
+           display : grid;
+           grid-template-columns : auto auto;
+           width : 99vw;
+           height : 95vh;
+        }
+        .sidemenu{
+        border : 1px solid black;
+        width : 25vw;
+        background-color : teal;
+        color : white;
+        }
+        .mainPage{
+        border : 1px solid black;
+        width : 74vw;
+        background-color : teal;
+        }
+        li{
+        list-style-type : none;
+        padding : 10px;
+        }
+        li:hover{
+        background-color : darkgreen;
+        padding : 10px;
+        }
+        .contentDiv{
+        padding : 0.3cm;
+        }
+        #boxDiv{width : 2cm ; height : 2cm ; background-color: gray;margin : 30vh 30vw;display : none;}
+    </style>
+</head>
+<body>
+<div class="mainDiv">
+    <div class="sidemenu">
+        <h1>NMS Works</h1>
+        <hr>
+        <li id="fa"> Fault Management</li>
+        <li id="in"> Inventory</li>
+        <li id="pe"> Performence</li>
+        <li id="us"> User Management</li>
+    </div>
+    <div class="mainPage">
+        <div class="contentDiv" id="contentId">
+        </div>
+        <div id="boxDiv"></div>
+    </div>
+</div>
+<script>
+    $("li").click(function(){
+        let textV = $(this).text();
+        $("#contentId").text(textV);
+        $("#contentId").append("<hr>");
+        $("#boxDiv").css("display","block");
+    });
+</script>
+</body>
+</html>

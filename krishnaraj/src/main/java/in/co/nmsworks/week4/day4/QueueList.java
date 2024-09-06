@@ -12,8 +12,8 @@ public class QueueList implements QueueInterface{
     }
 
     @Override
-    public void remove() {
-        integerList.remove(0);
+    public int remove() {
+        return integerList.remove(0);
     }
 
     @Override

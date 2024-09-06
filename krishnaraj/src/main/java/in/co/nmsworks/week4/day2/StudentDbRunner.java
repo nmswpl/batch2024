@@ -16,6 +16,7 @@ public class StudentDbRunner {
 
             preparedStatement.setInt(1, student.getId());
             preparedStatement.setString(2, student.getName());
+
             preparedStatement.setInt(3, student.getMath());
             preparedStatement.setInt(4, student.getEnglish());
             preparedStatement.setInt(5, student.getScience());
@@ -25,7 +26,7 @@ public class StudentDbRunner {
             preparedStatement.close();
             connection.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace();;
         }
     }
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            padding: 20px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <label for="nameV">NAME:</label>
+    <input type="text" id="nameV">
+
+    <label for="rollV">RollNO:</label>
+    <input type="text" id="rollV">
+
+    <label for="deptV">DEPT:</label>
+    <select id="deptV">
+        <option value="">Select Department</option>
+        <option value="IT">IT</option>
+        <option value="CSC">CSC</option>
+        <option value="ECE">ECE</option>
+    </select>
+
+    <button id="submitE">Submit</button>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#submitE").click(function(){
+            if($("#nameV").val() == ""){
+                $("#nameV").css({"border":"2px solid Red","font-size" : "large"});
+            } else {
+                $("#nameV").css({"border":"2px solid green","font-size" : "large"});
+            }
+
+            if($("#rollV").val() == ""){
+                $("#rollV").css({"border":"2px solid Red","font-size" : "large"});
+            } else {
+                $("#rollV").css({"border":"2px solid green","font-size" : "large"});
+            }
+
+            if($("#deptV").val() == ""){
+                $("#deptV").css({"border":"2px solid Red","font-size" : "large"});
+            } else {
+                $("#deptV").css({"border":"2px solid green","font-size" : "large"});
+            }
+        });
+    });
+</script>
+</body>
+</html>

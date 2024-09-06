@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+        display : grid;
+        grid-template-columns : auto auto auto;
+        gap : 1px;
+        width : 6cm;
+        }
+        .box{
+        width : 2cm;
+        height : 2cm;
+        border : 1px solid blue;
+        }
+        label{margin : 2cm 2cm;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+   <div class="container">
+       <div class="box" id="grid1"></div>
+       <div class="box" id="grid2"></div>
+       <div class="box" id="grid3"></div>
+       <div class="box" id="grid4"></div>
+       <div class="box" id="grid5"></div>
+       <div class="box" id="grid6"></div>
+       <div class="box" id="grid7"></div>
+       <div class="box" id="grid8"></div>
+       <div class="box" id="grid9"></div>
+   </div><br>
+   <hr>
+   <label for="gridV">Grid</label>
+   <select id="gridV">
+       <option value="">choose box</option>
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+       <option value="6">6</option>
+       <option value="7">7</option>
+       <option value="8">8</option>
+       <option value="9">9</option>
+   </select>
+   <label for="gridC">Color</label>
+   <select id="gridC">
+       <option value="">choose color</option>
+       <option value="red">red</option>
+       <option value="blue">blue</option>
+       <option value="green">green</option>
+       <option value="blue">blue</option>
+       <option value="yellow">yellow</option>
+       <option value="black">black</option>
+       <option value="white">white</option>
+       <option value="skyblue">skyblue</option>
+       <option value="lightgreen">light green</option>
+       <option value="pink">pink</option>
+       <option value="gray">gray</option>
+       <option value="purple">purple</option>
+       <option value="aqua">aqua</option>
+       <option value="silver">silver</option>
+       <option value="teal">teal</option>
+   </select>
+   <script>
+       let gridVal;
+       $(document).ready(function(){
+       });
+       function updateColor(gridId , gridColor){
+        $("#"+gridId).css("background-color",gridColor)
+       }
+       $("#gridC").click(function(){
+            gridVal = $("#gridV").val();
+            let gridCol = $("#gridC").val();
+            updateColor(`grid${gridVal}`,gridCol);
+       });
+   </script>
+</body>
+</html>
